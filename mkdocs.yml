@@ -14,8 +14,8 @@ theme:
     code: 'Ubuntu Mono'
 
   palette:
- 	  scheme: slate
- 	  primary: black
+    scheme: slate
+    primary: black
     accent: custom
 
 
