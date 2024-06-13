@@ -1,34 +1,38 @@
-site_name: TEQSAS Products Documentation
-site_url: https://docs.teqsas.de
+site_name: TEQSAS PRODUCTS Documentation
+site_url: https://docs.teqsas.de/
+
+extra_css:
+  - stylesheets/extra.css
+
 theme:
   name: material
+  logo: assets/logo.png
   features:
-    - navigation.tabs
-    - navigation.sections
-    - toc.integrate
-    - navigation.top
-    - search.suggest
-    - search.highlight
-    - content.tabs.link
-    - content.code.annotation
-    - content.code.copy
-  language: en
+
+  font:
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
+
   palette:
+      # Palette toggle for light mode
     - scheme: default
       toggle:
-        icon: material/toggle-switch-off-outline 
+        icon: material/brightness-7 
         name: Switch to dark mode
       primary: black
-      accent: orange 
-    - scheme: slate 
+      accent: custom
+ 
+      # Palette toggle for dark mode
+    - scheme: slate
       toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode    
+        icon: material/brightness-4
+        name: Switch to light mode
       primary: black
-      accent: orange
+      accent: custom
 
-plugins:
-  
+
+
+
   
 copyright: |
   &copy; 2023 <a href="https://github.com/teqsas"  target="_blank" rel="noopener">TEQSAS GmbH</a>
