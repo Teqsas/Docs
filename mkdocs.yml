@@ -18,7 +18,15 @@ theme:
     primary: black
     accent: orange
 
+nav:
+  - Home: index.md
+  - Products:
+    - 'LAP-TEQ PLUS INTERFACE': 
+      - INTERFACE/API/INTERFACE_API.md
+      # - INTERFACE/FAQ/INTERFACE_FAQ.md
+  - Support: support/support.md
 
+  # - Contact: contact.md
 
 
   
