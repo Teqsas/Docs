@@ -8,11 +8,19 @@
 ## 3.2 Ihr Gerät im Überblick
 Das TEQSAS PAN-C v2, im Folgenden PAN-C, erleichtert den Gebrauch von Coda Audio Linus 12C Systemendstufen. Die Audioeingänge sowie das Lautsprechersignal werden an der Vorderseite der Endstufe zugänglich. Durch die Möglichkeit zwischen analogem Audio oder AES/EBU (AES3) als Eingangssignal zu wählen, können auf 1HE Gerätehöhe viele Ein- und Ausgänge untergebracht werden.
 
-![Abbildung 1 – Frontansicht mit Inputs und Outputs](../assets/PAN-C Front-IO.drawio.png "Abbildung 1 – Frontansicht mit Inputs und Outputs")
+<figure markdown="span">
+  ![Abbildung 1 – Frontansicht mit Inputs und Outputs](../assets/PAN-C Front-IO.drawio.png "Abbildung 1 – Frontansicht mit Inputs und Outputs"){ loading=lazy }
+  <figcaption>Abbildung 1 – Frontansicht mit Inputs und Outputs</figcaption>
+</figure>
 
-![Abbildung 2 - Detailansicht Front mit Buttons](../assets/PAN-C Front-Buttons.drawio.png "Abbildung 2 - Detailansicht Front mit Buttons")
-
-![Abbildung 3 - Ansicht der Rückseite](../assets/PAN-C Back-IO.drawio.png "Abbildung 3 - Ansicht der Rückseite")
+<figure markdown="span">
+  ![Abbildung 2 - Detailansicht Front mit Buttons](../assets/PAN-C Front-Buttons.drawio.png "Abbildung 2 - Detailansicht Front mit Buttons"){ loading=lazy }
+  <figcaption>Abbildung 2 - Detailansicht Front mit Buttons</figcaption>
+</figure>
+<figure markdown="span">
+  ![Abbildung 3 - Ansicht der Rückseite](../assets/PAN-C Back-IO.drawio.png "Abbildung 3 - Ansicht der Rückseite"){ loading=lazy }
+  <figcaption>Abbildung 3 - Ansicht der Rückseite</figcaption>
+</figure>
 
 - **Anschlüsse der Vorderseite:**
   - **Audio Inputs**
