@@ -50,3 +50,4 @@
 *	Lassen Sie das Gerät nicht fallen und setzen Sie es keinen Erschütterungen aus.
 *	Durch Stürze, Biegen oder Verformen kann das Gerät oder Teile davon beschädigt werden.
 *	Symbole, die sich an Ihrem Gerät befinden, dürfen nicht entfernt oder abgedeckt werden. Nicht mehr lesbare Hinweise am Gerät müssen umgehend ersetzt werden. 
+

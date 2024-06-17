@@ -39,13 +39,17 @@ theme:
 nav:
   - Home: index.md
   - Products:
-    - 'PAN-C': 
+    - 'PAN-C':
       - PANC/index.md
-      - Bevor Sie beginnen: PANC/Manual/manual_1.md
-      - Zu Ihrer Sicherheit: PANC/Manual/manual_2.md
-      - Produktbeschreibung: PANC/Manual/manual_3.md
-      - Inbetriebnahme: PANC/Manual/manual_4.md
-      - Bedienung: PANC/Manual/manual_5.md
+      - Bedienungsanleitung:
+        - Bevor Sie beginnen: PANC/Manual/manual_1.md
+        - Zu Ihrer Sicherheit: PANC/Manual/manual_2.md
+        - Produktbeschreibung: PANC/Manual/manual_3.md
+        - Inbetriebnahme: PANC/Manual/manual_4.md
+        - Bedienung: PANC/Manual/manual_5.md
+        - Reinigung und Pflege: PANC/Manual/manual_6.md
+        - Störungen und Hilfe: PANC/Manual/manual_7.md
+        - CE-Konformitätserklärung: PANC/Manual/manual_ce.md
     - 'LAP-TEQ PLUS INTERFACE': 
       - INTERFACE/API/INTERFACE_API.md
       # - INTERFACE/FAQ/INTERFACE_FAQ.md
@@ -59,5 +63,6 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
   - md_in_html
+  - tables
   
 

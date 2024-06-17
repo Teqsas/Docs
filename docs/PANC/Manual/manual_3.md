@@ -54,3 +54,15 @@ Das TEQSAS PAN-C v2, im Folgenden PAN-C, erleichtert den Gebrauch von Coda Audio
     - Auswahl Analog oder AES/EBU an den XLR-Inputs
   - **LINET / Ethernet**
     - Wahl zwischen LiNET (8ch.) über die LiNET-Buchsen oder LiNET-C (4ch. + Control) über die Ethernet-Buchsen
+
+## Technische Daten
+
+| TEQSAS PAN-C                               |                 |
+|--------------------------------------------|-----------------|
+| zul. Umgebungstemperatur für die Benutzung | 0 – 40°C        |
+| zul. Umgebungstemperatur für die Lagerung  |-20 – 50°C       |
+| Abmessungen                                |482 × 180 × 44mm |
+| Gewicht PAN-C                              |3040gr           |
+
+
+Der Hersteller behält sich das Recht vor, technische Änderungen ohne vorherige Ankündigungen an dem Produkt / an der Produktgruppe vorzunehmen.
