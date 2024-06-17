@@ -7,7 +7,14 @@ extra_css:
 theme:
   name: material
   logo: assets/logo.png
-  features:
+
+  icon:
+    admonition:
+      info: octicons/info-16
+      danger: octicons/alert-16
+      warning: octicons/alert-16
+      abstract: octicons/alert-16
+      
 
   font:
     text: 'Ubuntu'
@@ -21,6 +28,12 @@ theme:
 nav:
   - Home: index.md
   - Products:
+    - 'PAN-C':
+      - PANC/Manual/manual_1.md
+      - PANC/Manual/manual_2.md
+      - PANC/Manual/manual_3.md
+      - PANC/Manual/manual_4.md
+      - PANC/Manual/manual_5.md
     - 'LAP-TEQ PLUS INTERFACE': 
       - INTERFACE/API/INTERFACE_API.md
       # - INTERFACE/FAQ/INTERFACE_FAQ.md
@@ -28,7 +41,10 @@ nav:
 
   # - Contact: contact.md
 
-
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   
 copyright: |
   &copy; 2023 <a href="https://teqsas.de"  target="_blank" rel="noopener">TEQSAS GmbH</a>
