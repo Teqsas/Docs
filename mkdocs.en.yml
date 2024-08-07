@@ -1,0 +1,86 @@
+site_name: TEQSAS PRODUCTS Documentation
+site_url: https://docs.teqsas.de/en/en
+docs_dir: 'docs'
+site_dir: 'generated'
+extra_css:
+  - assets/stylesheets/extra.css
+
+
+
+theme:
+  name: material
+  custom_dir: overrides/
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon.ico
+  language: en
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.indexes
+    - navigation.top
+
+  icon:
+    admonition:
+      info: octicons/info-16
+      danger: octicons/alert-16
+      warning: octicons/alert-16
+      abstract: octicons/alert-16
+
+  font:
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
+
+  palette:
+    scheme: slate
+    primary: black
+    accent: orange
+
+
+extra:                                              # Language Selection
+  alternate:  
+
+      # Switch to English
+    - name: English
+      link: /en/
+      lang: en
+
+    # Switch to German
+    - name: Deutsch
+      link: /de/
+      lang: de
+
+plugins: 
+  - search:
+      lang: en
+
+nav:
+  - Home: en/index.md
+  - Products:
+    - 'PAN-C':
+      - en/PANC/index.md
+      - Manual:
+        - Before you start: en/PANC/Manual/manual_1.md
+        - For your safety: en/PANC/Manual/manual_2.md
+        - Product Description: en/PANC/Manual/manual_3.md
+        - Setting it up: en/PANC/Manual/manual_4.md
+        - Usage: en/PANC/Manual/manual_5.md
+        - Cleaning and Care: en/PANC/Manual/manual_6.md
+        - Issues and Help: en/PANC/Manual/manual_7.md
+        - EU Declaration of Conformity: en/PANC/Manual/manual_ce.md
+    - 'LAP-TEQ PLUS INTERFACE': 
+      - en/INTERFACE/API/INTERFACE_API.md
+      # - INTERFACE/FAQ/INTERFACE_FAQ.md
+  - Support: support/support.md
+
+  # - Contact: contact.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - tables
+  
+

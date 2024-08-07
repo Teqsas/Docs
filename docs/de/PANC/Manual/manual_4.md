@@ -13,7 +13,7 @@
 
 Das PAN-C ist im 19-Zoll/1HE-Format konzipiert und zur Montage in einem Coda Audio LINUS M-RACK vorgesehen, kann aber in jedem handelsüblichen 19"-Rack verbaut werden.
 
-![PAN-C Dimensionen](../assets/pan-c_dimensions.png "Abbildung 4 - Bemaßung in mm") 
+![PAN-C Dimensionen](../../assets/images/pan-c_dimensions.png "Abbildung 4 - Bemaßung in mm") 
 
 ## 4.2 Stromversorgung
 !!! warning "Warnung"
@@ -43,4 +43,4 @@ Das PAN-C ist dazu vorgesehen, als permanenter Ersatz für das Coda PAN-M, in Ko
 
     Benutzen Sie zur Verbindung des Lautsprechersignals nur hochwertige Kabel mit korrekt angeschlossenen Steckern.
 
-![](../assets/Signalflow-Connections.drawio.png)
+![](../../assets/images/Signalflow-Connections.drawio.png)
