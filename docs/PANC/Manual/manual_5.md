@@ -37,4 +37,4 @@ Die vier Lautsprecherkanäle werden voll belegt auf die Vorderseite des PAN-C ge
 
 Die vier Lautsprecherkanäle werden voll belegt auf die Vorderseite des PAN-C geführt. Die Buchsen sind als NL4 ausgeführt. Jedes Kanalpaar ist nochmal als gedrehte Version vorhanden.
 
-![Amplifier Outputs](../assets/amp_out_front.png "Ausgänge Speaker Signal an der Frontseite")
+![Amplifier Outputs](../../assets/panc/amp_out_front.png "Ausgänge Speaker Signal an der Frontseite")
