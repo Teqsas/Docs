@@ -42,6 +42,7 @@ nav:
     - 'PAN-C':
       - PANC/index.md
       - Bedienungsanleitung:
+        - PANC/Manual/index.md
         - Bevor Sie beginnen: PANC/Manual/manual_1.md
         - Zu Ihrer Sicherheit: PANC/Manual/manual_2.md
         - Produktbeschreibung: PANC/Manual/manual_3.md
@@ -89,3 +90,4 @@ plugins:
             Reinigung und Pflege: Cleaning
             Störungen und Hilfe:  Issues and Help
             CE-Konformitätserklärung: Regulations
+  - with-pdf
