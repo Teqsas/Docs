@@ -11,12 +11,12 @@ The TEQSAS PAN-C v2, hereinafter referred to as PAN-C, facilitates the use of Co
 
 <figure markdown="span">
   ![Figure 1 – Front View with Inputs und Outputs](../../../assets/panc/PAN-C%20Front-IO.drawio.png "Abbildung 1 – Front View with Inputs und Outputs"){ loading=lazy }
-  <figcaption>Abbildung 1 – Frontansicht mit Inputs und Outputs</figcaption>
+  <figcaption>Figure 1 – Front view with inputs und outputs</figcaption>
 </figure>
 
 <figure markdown="span">
   ![Figure 2 - Detailed front view with Buttons](../../../assets/panc/PAN-C Front-Buttons.drawio.png "Figure 2 - Detailed front view with Buttons"){ loading=lazy }
-  <figcaption>Figure 2 - Detailed front view with Buttons</figcaption>
+  <figcaption>Figure 2 - Detailed front view with buttons</figcaption>
 </figure>
 <figure markdown="span">
   ![Figure 3 - Back view](../../../assets/panc/PAN-C Back-IO.drawio.png "Figure 3 - Back view"){ loading=lazy }
