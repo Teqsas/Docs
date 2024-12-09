@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://docs.teqsas.de/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/INTERFACE/API/INTERFACE_API/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/INTERFACE/API/INTERFACE_API/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/INTERFACE/API/INTERFACE_API/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/PANC/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/PANC/Manual/manual_1/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_1/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/PANC/Manual/manual_2/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_2/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/PANC/Manual/manual_3/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_3/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_3/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/PANC/Manual/manual_4/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_4/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/PANC/Manual/manual_5/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_5/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_5/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/PANC/Manual/manual_6/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_6/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_6/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/PANC/Manual/manual_7/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_7/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_7/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/PANC/Manual/manual_ce/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_ce/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_ce/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/support/support/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/support/support/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/support/support/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/en/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/en/INTERFACE/API/INTERFACE_API/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/INTERFACE/API/INTERFACE_API/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/INTERFACE/API/INTERFACE_API/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/en/PANC/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/en/PANC/Manual/manual_1/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_1/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_1/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/en/PANC/Manual/manual_2/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_2/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_2/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/en/PANC/Manual/manual_3/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_3/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_3/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/en/PANC/Manual/manual_4/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_4/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_4/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/en/PANC/Manual/manual_5/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_5/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_5/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/en/PANC/Manual/manual_6/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_6/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_6/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/en/PANC/Manual/manual_7/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_7/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_7/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/en/PANC/Manual/manual_ce/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/PANC/Manual/manual_ce/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/PANC/Manual/manual_ce/"/>
+    </url>
+    <url>
+        <loc>https://docs.teqsas.de/en/support/support/</loc>
+        <lastmod>2024-12-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.teqsas.de/en/support/support/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs.teqsas.de/support/support/"/>
+    </url>
+</urlset>
