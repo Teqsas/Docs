@@ -19,9 +19,9 @@
 | Abmessungen          | 138,5 × 78 × 38,5 mm   |
 | Gewicht              | 434 g                  |
 
-## LAP-TEQ Sensor PLUS
+## LAP-TEQ PLUS INCLINOMETER
 
-| LAP-TEQ Sensor PLUS         |                                                    |
+| LAP-TEQ PLUS INCLINOMETER         |                                                    |
 |-----------------------------|----------------------------------------------------|
 | Schutzart                   | IP54                                               |
 | Optik                       | 5° Kreuzoptik (ab Q3/2018)<br>7° Kreuzoptik (bis Q2/2018) |
@@ -64,7 +64,7 @@ Der Hersteller behält sich das Recht vor, technische Änderungen ohne vorherige
 
 | Komponente                          | Bestellnummer |
 |-------------------------------------|---------------|
-| LAP-TEQ PLUS Sensor Unit            | T87001004     |
+| LAP-TEQ PLUS INCLINOMETER Unit      | T87001004     |
 | LAP-TEQ PLUS Display Unit           | T87001005     |
 | LAP-TEQ PLUS Koffer mit Inlay       | T87001006     |
 | LAP-TEQ PLUS Kalibrierkabel         | T87001013     |

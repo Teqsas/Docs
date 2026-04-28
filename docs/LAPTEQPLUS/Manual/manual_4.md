@@ -56,35 +56,35 @@ Der Ladezustand wird durch die Kontrollleuchte (4) angezeigt:
 !!! abstract "Achtung!"
     **Gefahr von Geräteschäden!**
 
-    Keine spitzen Gegenstände in die Öffnung der Druckausgleichsmembran des Sensors stecken.
+    Keine spitzen Gegenstände in die Öffnung der Druckausgleichsmembran des INCLINOMETER stecken.
 
 !!! abstract "Achtung!"
     **Gefahr von Geräteschäden!**
 
     Alle Komponenten sind wartungsfrei. Geräte niemals öffnen, sonst verfällt der Garantieanspruch.
 
-<!-- TODO: Abbildung "Verbindung Displaymodul – Sensormodul mit XLR-Kabel" einfügen -->
+<!-- TODO: Abbildung "Verbindung Displaymodul – INCLINOMETER mit XLR-Kabel" einfügen -->
 
-* Verbinden Sie das Displaymodul (1) und ein Sensormodul (3) durch ein handelsübliches 3-pol XLR-Kabel (2).
+* Verbinden Sie das Displaymodul (1) und ein INCLINOMETER (3) durch ein handelsübliches 3-pol XLR-Kabel (2).
 
-An ein Displaymodul können nacheinander beliebig viele Sensormodule angeschlossen werden. So kann z. B. mit drei Sensormodulen die korrekte Ausrichtung von linker und rechter PA-Seite sowie eines Center-Clusters überprüft werden. Alternativ kann an alle Bumper je ein Sensormodul dauerhaft angebracht werden.
+An ein Displaymodul können nacheinander beliebig viele INCLINOMETER angeschlossen werden. So kann z. B. mit drei INCLINOMETER die korrekte Ausrichtung von linker und rechter PA-Seite sowie eines Center-Clusters überprüft werden. Alternativ kann an alle Bumper je ein INCLINOMETER dauerhaft angebracht werden.
 
-Für die korrekte Funktion muss das Displaymodul über ein handelsübliches XLR-Verbindungskabel mit einem Sensormodul verbunden werden. Die Sensormodule werden über das XLR-Kabel mit Spannung versorgt. Im Sensormodul befinden sich keine Akkus oder Batterien.
+Für die korrekte Funktion muss das Displaymodul über ein handelsübliches XLR-Verbindungskabel mit einem INCLINOMETER verbunden werden. Die INCLINOMETER werden über das XLR-Kabel mit Spannung versorgt. Im INCLINOMETER befinden sich keine Akkus oder Batterien.
 
-Sollte das Kabel zwischen Display und Sensormodul länger als 75 m sein, reduziert sich die Helligkeit des Lasers. Die Messfunktion bleibt aber weiterhin erhalten.
+Sollte das Kabel zwischen Display und INCLINOMETER länger als 75 m sein, reduziert sich die Helligkeit des Lasers. Die Messfunktion bleibt aber weiterhin erhalten.
 
 Möchten Sie größere Entfernungen als 75 m überbrücken, muss ein XLR-Kabel mit einem größeren Querschnitt als 0,22 mm² verwendet werden. Dadurch wird der Spannungsabfall auf dem Kabelweg reduziert.
 
 !!! info "Hinweis"
     Für einen Funktionstest kann auch das beiliegende Kalibrier-Kabel benutzt werden. Die alleinige Verwendung des Kalibrier-Kabels löst nicht den Kalibriervorgang aus.
 
-<!-- TODO: Abbildung "Befestigung des Sensormoduls über die Flanschlöcher" einfügen -->
+<!-- TODO: Abbildung "Befestigung des INCLINOMETER über die Flanschlöcher" einfügen -->
 
-* Nutzen Sie bei der Befestigung der Sensormodule die Flanschlöcher (1) am Gehäuseboden.
+* Nutzen Sie bei der Befestigung der INCLINOMETER die Flanschlöcher (1) am Gehäuseboden.
 
-Für eine sichere Befestigung an einem Bumper ohne spezielle LAP-TEQ Aufnahme steht die TEQSAS LAP-TEQ Magnethalterung optional zur Verfügung. Der Sensor muss fest mit dem Flugrahmen verschraubt oder mit einer geeigneten Sicherung gegen Herunterfallen gesichert werden.
+Für eine sichere Befestigung an einem Bumper ohne spezielle LAP-TEQ Aufnahme steht die TEQSAS LAP-TEQ Magnethalterung optional zur Verfügung. Das INCLINOMETER muss fest mit dem Flugrahmen verschraubt oder mit einer geeigneten Sicherung gegen Herunterfallen gesichert werden.
 
 ## 4.3 Inbetriebnahme
-Vom Werk sind die Sensormodule so kalibriert, dass die Bodenplatte nach unten ausgerichtet werden muss. Soll das Sensormodul in einer anderen Lage benutzt werden, muss es neu kalibriert werden. Möglich sind vier Positionen (90°-Raster um die Längsachse), siehe [Kapitel 8 Kalibrierung](manual_8.md).
+Vom Werk sind die INCLINOMETER so kalibriert, dass die Bodenplatte nach unten ausgerichtet werden muss. Soll das INCLINOMETER in einer anderen Lage benutzt werden, muss es neu kalibriert werden. Möglich sind vier Positionen (90°-Raster um die Längsachse), siehe [Kapitel 8 Kalibrierung](manual_8.md).
 
 Für die Erstinbetriebnahme muss die Bodenplatte nach unten positioniert werden.

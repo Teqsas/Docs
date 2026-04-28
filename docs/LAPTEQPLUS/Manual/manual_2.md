@@ -31,7 +31,7 @@
 * Wenn Sie das Gerät im Freien benutzen, verwenden Sie nur Verlängerungskabel, die auch für den Außenbereich geeignet sind. Die Anwendung eines für den Außenbereich geeigneten Verlängerungskabels verringert das Risiko von Geräteschäden.
 
 ## Sicherheit von Personen
-* Seien Sie aufmerksam, achten Sie darauf, was Sie tun, und gehen Sie mit Vernunft an die Arbeit. Benutzen Sie das Gerät nicht, wenn Sie müde sind oder unter dem Einfluss von Drogen, Alkohol oder Medikamenten stehen. Ein Moment der Unachtsamkeit beim Gebrauch kann zu ernsthaften Verletzungen führen. Der Sensor muss fest mit dem Flugrahmen verschraubt oder mit einer geeigneten Sicherung gegen Herunterfallen gesichert werden.
+* Seien Sie aufmerksam, achten Sie darauf, was Sie tun, und gehen Sie mit Vernunft an die Arbeit. Benutzen Sie das Gerät nicht, wenn Sie müde sind oder unter dem Einfluss von Drogen, Alkohol oder Medikamenten stehen. Ein Moment der Unachtsamkeit beim Gebrauch kann zu ernsthaften Verletzungen führen. Das INCLINOMETER muss fest mit dem Flugrahmen verschraubt oder mit einer geeigneten Sicherung gegen Herunterfallen gesichert werden.
 
 ## Umgang mit Akkugeräten
 * Es dürfen nur vom Hersteller zugelassene Ladegeräte mit der auf dem Typenschild des Akkus angegebenen Werten verwendet werden. Der Einsatz abweichender Ladegeräte kann die Gefahr von Verletzungen sowie Sachschäden durch explodierende Akkus verursachen.
