@@ -1,0 +1,74 @@
+# 2 For your safety
+
+!!! warning "Warning!"
+    **Failure to observe the safety information and instructions may result in electric shock, fire and/or serious injury!**
+
+    Read all safety information and instructions.
+
+## General safety instructions
+* Keep all safety information and instructions for future reference. The term "appliance" used in the safety instructions refers to mains-powered appliances (with mains cable) and battery-powered appliances (without mains cable).
+* Danger to life and accidents for infants and children! Never leave children unattended with packaging material and product. There is a risk of suffocation from packaging material and a risk to life from strangulation. Children often underestimate the dangers. Always keep children away from the product. The product is not a toy.
+* To ensure safe handling of this appliance, the user must have read and understood these instructions for use before using the appliance for the first time.
+* If you sell or pass on the appliance, it is essential that you also hand over these instructions for use.
+* This appliance is not intended for use by persons (including children) with reduced physical, sensory or mental capabilities, or lack of experience and/or knowledge, unless they have been given supervision or instruction concerning use of the appliance by a person responsible for their safety.
+* The appliance may only be used if it is in perfect working order and fully assembled. If the appliance or any part of it is defective, it must be taken out of service and repaired or disposed of properly.
+* Use the appliance only for the purpose for which it is intended.
+* Keep children away from the appliance! Keep the device safe from children and unauthorised persons.
+* Only use and store the device within the permissible ambient conditions (temperatures, humidity, etc.).
+
+## Handling laser beams
+* Do not look into the beam, even from a great distance.
+* Never aim the measuring beam at people, other living beings or reflective surfaces.
+* Standard laser goggles do not protect against the dangers of laser radiation. They merely make the laser beam easier to see.
+
+## Workplace safety
+* Keep your work area clean and well lit. Untidiness or unlit work areas can lead to accidents. Observe the workplace and accident prevention regulations applicable in your country.
+* Do not work with the electrical appliance in potentially explosive atmospheres containing flammable liquids, gases or dust. Power tools generate sparks that can ignite the dust or vapours.
+
+## Electrical safety
+* Static electricity can occur in dry environments. In dry rooms, touch a metal object to discharge the static electricity before operating the appliance.
+* Do not misuse the cable to carry or hang up the appliance or to pull the plug out of the socket. Keep cables away from heat, oil, sharp edges or moving parts of the appliance. Damaged or tangled cables increase the risk of damage to the appliance.
+* If you use the appliance outdoors, only use extension cables that are also suitable for outdoor use. The use of an extension cable suitable for outdoor use reduces the risk of damage to the appliance.
+
+## Safety of persons
+* Be attentive, pay attention to what you are doing and use common sense when working. Do not use the appliance when you are tired or under the influence of drugs, alcohol or medication. A moment of inattention during use can lead to serious injury. The INCLINOMETER must be securely screwed to the flying frame or secured against falling using a suitable safeguard.
+
+## Handling battery-powered devices
+* Only chargers approved by the manufacturer with the values specified on the battery's nameplate may be used. Using non-approved chargers may cause injury and material damage due to exploding batteries.
+* Only use the batteries intended for use with this device. The use of other batteries can lead to injury and risk of fire.
+* Do not expose the battery to heat, fire, water or moisture. There is a risk of explosion.
+* If the battery is damaged or used improperly, vapours may escape. Ensure good ventilation and consult a doctor if you experience any symptoms. The vapours may irritate your respiratory tract and cause illness.
+
+## Safety information for chargers
+* Keep the charger away from rain or moisture. Water entering a charger increases the risk of electric shock.
+* Keep the charger clean. Contamination poses a risk of electric shock.
+* Check the charger, cable and plug before each use. Do not use the charger if you discover any damage.
+* Do not open the charger yourself and only have it repaired by qualified specialists and only with original spare parts. Damaged chargers, cables and plugs increase the risk of electric shock.
+* Do not operate the charger on an easily flammable surface (e.g. paper, textiles, etc.) or in a flammable environment. There is a risk of fire due to the heat generated during charging.
+* Supervise children and ensure that they do not play with the charger. Children and persons with mental or physical impairments may only use the charger under supervision or if they have been instructed in its use. Careful instruction reduces incorrect operation and injuries.
+
+## Service
+* Only have your appliance repaired by qualified specialists and only with original spare parts. This will ensure that the safety of the power tool is maintained.
+* Ensure adequate lighting when working with the appliance. Poor visibility can lead to an increased risk of accidents.
+* Do not use any accessories that have not been specially designed and recommended by the manufacturer for this appliance. Just because you can connect the accessories to your appliance does not guarantee trouble-free and safe use.
+* The device may show signs of wear and tear over time.
+* The use of unauthorised accessories may cause damage or wear that is not covered by the warranty.
+
+## Special device instructions
+* Do not use the appliance in potentially explosive atmospheres or in the vicinity of flammable liquids or gases!
+* Paint and stickers can stick to moving parts and impair proper operation.
+* If you have an allergic reaction to the colour or metallic parts of the appliance, it may cause itching, eczema or swelling of the skin. If this is the case, stop using the appliance and consult a doctor.
+* Broken glass or plastic can cause injury. Have the appliance repaired at the service centre.
+* Do not drop the device and do not subject it to shocks.
+* The device or parts of it may be damaged if dropped, bent or deformed.
+* Magnetic fields can cause the device to malfunction or the battery to discharge.
+* The device has safety precautions that limit the leaked output of the laser beam: no changes may be made to the optical system.
+* This device is classified as a Class 3R laser product in accordance with the international standard IEC 60825. It works with a visible laser beam that is harmless under normal operating conditions.
+* The system has a Class 3R laser. This laser class may only be operated by commercial users. The operator is liable for personal injury and material damage caused by operation.
+* Symbols on your device must not be removed or covered. Labels on the appliance that are no longer legible must be replaced immediately.
+
+!!! info "Note"
+    Read and observe the instructions for use before commissioning.
+
+!!! danger "Risk of eye damage!"
+    Never look directly into the laser beam.

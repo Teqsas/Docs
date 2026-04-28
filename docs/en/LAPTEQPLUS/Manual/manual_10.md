@@ -1,0 +1,28 @@
+# 10 Disposal
+
+The packaging is made of environmentally friendly materials that can be disposed of at local recycling centres.
+
+Devices marked with the symbol shown alongside must not be disposed of with household waste. You are obliged to dispose of waste electrical and electronic equipment separately.
+
+You can find out how to dispose of old appliances from your local authority.
+
+By disposing of old appliances separately, you are sending them for recycling or other forms of reuse. In doing so, you will help to prevent harmful substances from being released into the environment.
+
+## 10.1 Disposing of batteries
+Batteries that are no longer needed do not belong in household waste — they must be disposed of in accordance with regulations.
+
+* Take used batteries to a battery collection point at the dealer or municipality.
+* Do not burn batteries. Risk of explosion!
+* Do not burn rechargeable batteries. Risk of explosion!
+
+## 10.2 Removing the battery
+
+!!! info "Note"
+    Before disposing of the device, the battery must be removed. If the battery is defective, it can be replaced by a service workshop. Please contact your sales partner.
+
+<!-- TODO: Insert image "Removing the battery – screws (1), cable (2), battery (3)" -->
+
+* Remove the cover caps on the display module using a small screwdriver.
+* Unscrew the screws (1).
+* Disconnect the cable (2).
+* Remove the battery (3) and dispose of it properly.
