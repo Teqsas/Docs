@@ -83,6 +83,22 @@ nav:
           - Technische Daten: LAPTEQPLUS/Manual/manual_11.md
           - CE-Konformitätserklärung: LAPTEQPLUS/Manual/manual_ce.md
     - 'LAP-TEQ PLUS INTERFACE':
+      - INTERFACE/index.md
+      - Bedienungsanleitung:
+        - Einstieg:
+          - Bevor Sie beginnen: INTERFACE/Manual/manual_1.md
+          - Zu Ihrer Sicherheit: INTERFACE/Manual/manual_2.md
+          - Produktbeschreibung: INTERFACE/Manual/manual_3.md
+        - Betrieb:
+          - Inbetriebnahme: INTERFACE/Manual/manual_4.md
+          - Bedienung: INTERFACE/Manual/manual_5.md
+          - Reinigung und Pflege: INTERFACE/Manual/manual_6.md
+        - Service:
+          - Störungen und Hilfe: INTERFACE/Manual/manual_7.md
+          - Entsorgung: INTERFACE/Manual/manual_10.md
+        - Referenz:
+          - Technische Daten: INTERFACE/Manual/manual_11.md
+          - CE-Konformitätserklärung: INTERFACE/Manual/manual_ce.md
       - API: INTERFACE/API/INTERFACE_API.md
   - Support: support/support.md
 

@@ -20,6 +20,6 @@ Hier finden Sie die aktuelle Dokumentation und Informationen zu TEQSAS PRODUCTS
 
     ---
 
-    [API-Referenz](INTERFACE/API/INTERFACE_API.md)
+    [Zur Dokumentation](INTERFACE/index.md)
 
 </div>
