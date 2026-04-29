@@ -1,3 +1,3 @@
-#TEQSAS PRODUCTS
+# TEQSAS PRODUCTS
 
-Here you can find the latest documentation and information about TEQSAS PRODUCTS
+Hier finden Sie die aktuelle Dokumentation und Informationen zu TEQSAS PRODUCTS

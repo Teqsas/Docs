@@ -1,8 +1,8 @@
 # Support
 
-If you have any further questions or you might think your device does not work as intended, please contact our support. 
+Wenn Sie weitere Fragen haben oder denken, dass Ihr Gerät nicht wie vorgesehen funktioniert, kontaktieren Sie bitte unseren Support.
 
-We are always listening on the following Email-Adress:
+Sie erreichen uns jederzeit unter der folgenden E-Mail-Adresse:
 
 [support@teqsas.de](mailto:support@teqsas.de)
 

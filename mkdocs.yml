@@ -1,4 +1,4 @@
-site_name: TEQSAS PRODUCTS Documentation
+site_name: TEQSAS PRODUCTS
 site_url: https://docs.teqsas.de/
 
 extra_css:
@@ -37,8 +37,8 @@ theme:
 
 
 nav:
-  - Home: index.md
-  - Products:
+  - Startseite: index.md
+  - Produkte:
     - 'PAN-C':
       - PANC/index.md
       - Bedienungsanleitung:
@@ -95,6 +95,8 @@ plugins:
           name: English
           build: true
           nav_translations:
+            Startseite: Home
+            Produkte: Products
             Bedienungsanleitung: Manual
             Bevor Sie beginnen: Before you begin
             Zu Ihrer Sicherheit: For your safety
