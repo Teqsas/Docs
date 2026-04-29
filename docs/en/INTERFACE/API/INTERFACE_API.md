@@ -15,11 +15,11 @@ If you find any bugs or errors using the system, please send a report to support
 ### Connecting to a LTPI
 The LTPI is a TCP/IP device and listens to HTTP requests. An example request for checking the connection and the state of the LTPI would look like the following:
 
-```GET http://{ip-adress}/lt```
+```GET http://{ip-address}/lt```
 
 This returns a response in JSON-format which could look like this:
 
-```
+```json
 {
   "0": {
     "lbl": "Amps SR",
@@ -75,7 +75,7 @@ Further information on interpreting the JSON data can be found in chapter Readin
 
 HTTP-Request:
 
-```GET http://{ip-adress}/lt?c=1{sensor-number}```
+```GET http://{ip-address}/lt?c=1{sensor-number}```
 
 Provide the sensor number which corresponds to the XLR-port on the LTPI Hardware to turn on this sensor. Normal mode means, the sensor will start just like a single click on the webapp or reading out with a LAP-TEQ PLUS DISPLAY. E.g. if two sensors are connected in daisychain, both sensors will be started.
 Returns a JSON document like in Chapter Connecting to a LTPI.
@@ -84,7 +84,7 @@ Returns a JSON document like in Chapter Connecting to a LTPI.
 
 HTTP-Request:
 
-```GET http://{ip-adress}/lt?c=17```
+```GET http://{ip-address}/lt?c=17```
 
 This starts all connected sensors. Normal mode means, the sensor will start just like a single click on the webapp or reading out with a LAP-TEQ PLUS DISPLAY. E.g. if two sensors are connected in daisychain, both sensors will be started.
 Returns a JSON document like in -1.1 Connecting to a LTPI-
@@ -93,7 +93,7 @@ Returns a JSON document like in -1.1 Connecting to a LTPI-
 
 HTTP-Request:
 
-```GET http://{ip-adress}/lt?c=2{sensor-number}```
+```GET http://{ip-address}/lt?c=2{sensor-number}```
 
 Provide the sensor number which corresponds to the XLR-port on the LTPI Hardware on which the LAP-TEQ PLUS ATMOSPHERE sensor is connected. If on this sensor-line an ATMOSPHERE sensor and e.g. an INCLINOMETER is connected, only the ATMOSPHERE sensor will be turned on. This also works with 1.2.2 Start all connected sensors in normal mode.
 Returns a JSON document like in -1.1 Connecting to a LTPI-
@@ -136,7 +136,7 @@ Key | Description
 
 HTTP-Request:
 
-```GET http://{ip-adress}/lt?c=0{sensor-number}```
+```GET http://{ip-address}/lt?c=0{sensor-number}```
 
 Provide the sensor number which corresponds to the XLR-port on the LTPI Hardware to turn this sensor off. 
 Returns a JSON document like in -1.1 Connecting to a LTPI-
@@ -145,7 +145,7 @@ Returns a JSON document like in -1.1 Connecting to a LTPI-
 
 HTTP-Request:
 
-```GET http://{ip-adress}/lt?c=07```
+```GET http://{ip-address}/lt?c=07```
 
 Turns off all connected sensors.
 Returns a JSON document like in -1.1 Connecting to a LTPI-
@@ -153,18 +153,18 @@ Returns a JSON document like in -1.1 Connecting to a LTPI-
 ##	Other Functions
 ###	Network Scan
 HTTP-Request:
-```GET http://{ip-adress}/scan```
+```GET http://{ip-address}/scan```
 
 Start scanning the network for other connected LTPIs. 
 
 ###	Reading the list of connected LTPIs
 HTTP-Request:
 
-```GET http://{ip-adress}/nbors.json```
+```GET http://{ip-address}/nbors.json```
 
 Returns a JSON object containing the LTPI information of this LTPI and other LTPIs connected to the network. To update the list please perform 1.5.1 Network Scan.
 
-```
+```json
 {
   "0": {
     "dn": "Amps SR",
