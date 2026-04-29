@@ -82,11 +82,8 @@ nav:
         - Referenz:
           - Technische Daten: LAPTEQPLUS/Manual/manual_11.md
           - CE-Konformitätserklärung: LAPTEQPLUS/Manual/manual_ce.md
-  - Entwickler:
-    - LAP-TEQ PLUS INTERFACE API: INTERFACE/API/INTERFACE_API.md
-  - Downloads:
-    - PAN-C CE-Konformitätserklärung: PANC/Manual/manual_ce.md
-    - LAP-TEQ PLUS CE-Konformitätserklärung: LAPTEQPLUS/Manual/manual_ce.md
+    - 'LAP-TEQ PLUS INTERFACE':
+      - API: INTERFACE/API/INTERFACE_API.md
   - Support: support/support.md
 
 markdown_extensions:
@@ -114,8 +111,6 @@ plugins:
           nav_translations:
             Startseite: Home
             Produkte: Products
-            Entwickler: Developers
-            Downloads: Downloads
             Bedienungsanleitung: Manual
             Einstieg: Getting started
             Betrieb: Operation
@@ -133,5 +128,3 @@ plugins:
             Entsorgung: Disposal
             Technische Daten: Technical Data
             CE-Konformitätserklärung: Regulations
-            PAN-C CE-Konformitätserklärung: PAN-C Regulations
-            LAP-TEQ PLUS CE-Konformitätserklärung: LAP-TEQ PLUS Regulations

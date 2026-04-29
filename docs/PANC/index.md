@@ -18,10 +18,4 @@ Dies ist die Sammlung der Dokumente für das TEQSAS PAN-C.
 
     [Zur Erklärung](./Manual/manual_ce.md)
 
--   :octicons-code-16: __INTERFACE API__
-
-    ---
-
-    [API-Referenz](../INTERFACE/API/INTERFACE_API.md)
-
 </div>
