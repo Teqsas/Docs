@@ -20,6 +20,6 @@ Here you can find the latest documentation and information about TEQSAS PRODUCTS
 
     ---
 
-    [API reference](INTERFACE/API/INTERFACE_API.md)
+    [To the documentation](INTERFACE/index.md)
 
 </div>
