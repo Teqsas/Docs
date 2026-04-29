@@ -31,17 +31,6 @@
 | Dimensions                 | 121.5 × 38.5 × 32.7 mm                             |
 | Weight                     | 170 g                                              |
 
-## Mains plug charger
-
-| Mains plug charger    |                       |
-|-----------------------|------------------------|
-| Nominal voltage       | 100–240 V~, 50–60 Hz   |
-| Charging voltage      | 5 V                    |
-| Charging current      | max. 1 A               |
-| Charging connection   | Micro USB              |
-| Dimensions            | 70 × 36 × 14 mm        |
-| Protection class      | II                     |
-
 ## Battery
 
 | Battery       |                |
@@ -59,14 +48,3 @@
 | USB charging cable| Micro USB (APCBU10BBECSTD)                 |
 
 The manufacturer reserves the right to make technical changes to the product / product group without prior notice.
-
-## Order numbers for individual components
-
-| Component                           | Order number  |
-|-------------------------------------|---------------|
-| LAP-TEQ PLUS INCLINOMETER Unit      | T87001004     |
-| LAP-TEQ PLUS Display Unit           | T87001005     |
-| LAP-TEQ PLUS case with inlay        | T87001006     |
-| LAP-TEQ PLUS calibration cable      | T87001013     |
-| LAP-TEQ PLUS Angle Notes            | T87001014     |
-| LAP-TEQ PLUS Note Pen               | T87001015     |

@@ -31,17 +31,6 @@
 | Abmessungen                 | 121,5 × 38,5 × 32,7 mm                             |
 | Gewicht                     | 170 g                                              |
 
-## Netzstecker-Ladegerät
-
-| Netzstecker-Ladegerät |                       |
-|-----------------------|------------------------|
-| Nennspannung          | 100–240 V~, 50–60 Hz   |
-| Ladespannung          | 5 V                    |
-| Ladestrom             | max. 1 A               |
-| Ladeanschluss         | Micro USB              |
-| Abmessungen           | 70 × 36 × 14 mm        |
-| Schutzklasse          | II                     |
-
 ## Akku
 
 | Akku          |                |
@@ -59,14 +48,3 @@
 | USB-Ladekabel    | Micro USB (APCBU10BBECSTD)                 |
 
 Der Hersteller behält sich das Recht vor, technische Änderungen ohne vorherige Ankündigungen an dem Produkt / an der Produktgruppe vorzunehmen.
-
-## Bestellnummern für Einzelkomponenten
-
-| Komponente                          | Bestellnummer |
-|-------------------------------------|---------------|
-| LAP-TEQ PLUS INCLINOMETER Unit      | T87001004     |
-| LAP-TEQ PLUS Display Unit           | T87001005     |
-| LAP-TEQ PLUS Koffer mit Inlay       | T87001006     |
-| LAP-TEQ PLUS Kalibrierkabel         | T87001013     |
-| LAP-TEQ PLUS Angle Notes            | T87001014     |
-| LAP-TEQ PLUS Note Pen               | T87001015     |
