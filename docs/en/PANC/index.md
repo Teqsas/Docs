@@ -4,3 +4,19 @@
 
 
 This is the collection of documents for the TEQSAS PAN-C.
+
+<div class="grid cards" markdown>
+
+-   :octicons-book-16: __Manual__
+
+    ---
+
+    [To the manual](./Manual/manual_1.md)
+
+-   :octicons-shield-check-16: __CE Conformity__
+
+    ---
+
+    [To the declaration](./Manual/manual_ce.md)
+
+</div>

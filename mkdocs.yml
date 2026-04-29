@@ -4,18 +4,30 @@ site_url: https://docs.teqsas.de/
 extra_css:
   - stylesheets/extra.css
 
-
+extra:
+  alternate:
+    - name: Deutsch
+      link: /
+      lang: de
+    - name: English
+      link: /en/
+      lang: en
 
 theme:
   name: material
   logo: assets/logo.png
   custom_dir: overrides
   features:
-    # - navigation.instant
-    # - navigation.instant.progress
     - navigation.tracking
     - navigation.indexes
+    - navigation.sections
+    - navigation.path
+    - navigation.footer
     - navigation.top
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.tabs.link
 
   icon:
     admonition:
@@ -33,44 +45,46 @@ theme:
     primary: black
     accent: orange
 
-
-
-
 nav:
   - Startseite: index.md
   - Produkte:
     - 'PAN-C':
       - PANC/index.md
       - Bedienungsanleitung:
-        - Bevor Sie beginnen: PANC/Manual/manual_1.md
-        - Zu Ihrer Sicherheit: PANC/Manual/manual_2.md
-        - Produktbeschreibung: PANC/Manual/manual_3.md
-        - Inbetriebnahme: PANC/Manual/manual_4.md
-        - Bedienung: PANC/Manual/manual_5.md
-        - Reinigung und Pflege: PANC/Manual/manual_6.md
-        - Störungen und Hilfe: PANC/Manual/manual_7.md
-        - CE-Konformitätserklärung: PANC/Manual/manual_ce.md
+        - Einstieg:
+          - Bevor Sie beginnen: PANC/Manual/manual_1.md
+          - Zu Ihrer Sicherheit: PANC/Manual/manual_2.md
+          - Produktbeschreibung: PANC/Manual/manual_3.md
+        - Betrieb:
+          - Inbetriebnahme: PANC/Manual/manual_4.md
+          - Bedienung: PANC/Manual/manual_5.md
+          - Reinigung und Pflege: PANC/Manual/manual_6.md
+        - Service:
+          - Störungen und Hilfe: PANC/Manual/manual_7.md
+        - Referenz:
+          - CE-Konformitätserklärung: PANC/Manual/manual_ce.md
     - 'LAP-TEQ PLUS':
       - LAPTEQPLUS/index.md
       - Bedienungsanleitung:
-        - Bevor Sie beginnen: LAPTEQPLUS/Manual/manual_1.md
-        - Zu Ihrer Sicherheit: LAPTEQPLUS/Manual/manual_2.md
-        - Produktbeschreibung: LAPTEQPLUS/Manual/manual_3.md
-        - Inbetriebnahme: LAPTEQPLUS/Manual/manual_4.md
-        - Bedienung: LAPTEQPLUS/Manual/manual_5.md
-        - Reinigung und Pflege: LAPTEQPLUS/Manual/manual_6.md
-        - Störungen und Hilfe: LAPTEQPLUS/Manual/manual_7.md
-        - Kalibrierung: LAPTEQPLUS/Manual/manual_8.md
-        - Lagerung: LAPTEQPLUS/Manual/manual_9.md
-        - Entsorgung: LAPTEQPLUS/Manual/manual_10.md
-        - Technische Daten: LAPTEQPLUS/Manual/manual_11.md
-        - CE-Konformitätserklärung: LAPTEQPLUS/Manual/manual_ce.md
+        - Einstieg:
+          - Bevor Sie beginnen: LAPTEQPLUS/Manual/manual_1.md
+          - Zu Ihrer Sicherheit: LAPTEQPLUS/Manual/manual_2.md
+          - Produktbeschreibung: LAPTEQPLUS/Manual/manual_3.md
+        - Betrieb:
+          - Inbetriebnahme: LAPTEQPLUS/Manual/manual_4.md
+          - Bedienung: LAPTEQPLUS/Manual/manual_5.md
+          - Reinigung und Pflege: LAPTEQPLUS/Manual/manual_6.md
+        - Service:
+          - Störungen und Hilfe: LAPTEQPLUS/Manual/manual_7.md
+          - Kalibrierung: LAPTEQPLUS/Manual/manual_8.md
+          - Lagerung: LAPTEQPLUS/Manual/manual_9.md
+          - Entsorgung: LAPTEQPLUS/Manual/manual_10.md
+        - Referenz:
+          - Technische Daten: LAPTEQPLUS/Manual/manual_11.md
+          - CE-Konformitätserklärung: LAPTEQPLUS/Manual/manual_ce.md
     - 'LAP-TEQ PLUS INTERFACE':
-      - INTERFACE/API/INTERFACE_API.md
-      # - INTERFACE/FAQ/INTERFACE_FAQ.md
+      - API: INTERFACE/API/INTERFACE_API.md
   - Support: support/support.md
-
-  # - Contact: contact.md
 
 markdown_extensions:
   - admonition
@@ -82,7 +96,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  
+
 plugins:
   - i18n:
       docs_structure: folder
@@ -98,6 +112,10 @@ plugins:
             Startseite: Home
             Produkte: Products
             Bedienungsanleitung: Manual
+            Einstieg: Getting started
+            Betrieb: Operation
+            Service: Service
+            Referenz: Reference
             Bevor Sie beginnen: Before you begin
             Zu Ihrer Sicherheit: For your safety
             Produktbeschreibung:  Product Description
