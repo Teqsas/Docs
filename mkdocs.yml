@@ -82,6 +82,42 @@ nav:
         - Referenz:
           - Technische Daten: LAPTEQPLUS/Manual/manual_11.md
           - CE-Konformitätserklärung: LAPTEQPLUS/Manual/manual_ce.md
+    - 'LAP-TEQ PLUS Atmosphere':
+      - LAPTEQPLUSATMOSPHERE/index.md
+      - Bedienungsanleitung:
+        - Einstieg:
+          - Bevor Sie beginnen: LAPTEQPLUSATMOSPHERE/Manual/manual_1.md
+          - Zu Ihrer Sicherheit: LAPTEQPLUSATMOSPHERE/Manual/manual_2.md
+          - Produktbeschreibung: LAPTEQPLUSATMOSPHERE/Manual/manual_3.md
+        - Betrieb:
+          - Inbetriebnahme: LAPTEQPLUSATMOSPHERE/Manual/manual_4.md
+          - Reinigung und Pflege: LAPTEQPLUSATMOSPHERE/Manual/manual_6.md
+        - Service:
+          - Störungen und Hilfe: LAPTEQPLUSATMOSPHERE/Manual/manual_7.md
+          - Lagerung: LAPTEQPLUSATMOSPHERE/Manual/manual_9.md
+          - Entsorgung: LAPTEQPLUSATMOSPHERE/Manual/manual_10.md
+        - Referenz:
+          - Technische Daten: LAPTEQPLUSATMOSPHERE/Manual/manual_11.md
+          - CE-Konformitätserklärung: LAPTEQPLUSATMOSPHERE/Manual/manual_ce.md
+    - 'LAP-TEQ PLUS Elevation':
+      - LAPTEQPLUSELEVATION/index.md
+      - Bedienungsanleitung:
+        - Einstieg:
+          - Bevor Sie beginnen: LAPTEQPLUSELEVATION/Manual/manual_1.md
+          - Zu Ihrer Sicherheit: LAPTEQPLUSELEVATION/Manual/manual_2.md
+          - Produktbeschreibung: LAPTEQPLUSELEVATION/Manual/manual_3.md
+        - Betrieb:
+          - Inbetriebnahme: LAPTEQPLUSELEVATION/Manual/manual_4.md
+          - Bedienung: LAPTEQPLUSELEVATION/Manual/manual_5.md
+          - Reinigung und Pflege: LAPTEQPLUSELEVATION/Manual/manual_6.md
+        - Service:
+          - Störungen und Hilfe: LAPTEQPLUSELEVATION/Manual/manual_7.md
+          - Trigonometrische Korrektur: LAPTEQPLUSELEVATION/Manual/manual_8.md
+          - Lagerung: LAPTEQPLUSELEVATION/Manual/manual_9.md
+          - Entsorgung: LAPTEQPLUSELEVATION/Manual/manual_10.md
+        - Referenz:
+          - Technische Daten: LAPTEQPLUSELEVATION/Manual/manual_11.md
+          - CE-Konformitätserklärung: LAPTEQPLUSELEVATION/Manual/manual_ce.md
     - 'LAP-TEQ PLUS INTERFACE':
       - INTERFACE/index.md
       - Bedienungsanleitung:
@@ -140,6 +176,7 @@ plugins:
             Reinigung und Pflege: Cleaning
             Störungen und Hilfe:  Issues and Help
             Kalibrierung: Calibration
+            Trigonometrische Korrektur: Trigonometric Correction
             Lagerung: Storage
             Entsorgung: Disposal
             Technische Daten: Technical Data

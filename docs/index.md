@@ -16,6 +16,18 @@ Hier finden Sie die aktuelle Dokumentation und Informationen zu TEQSAS PRODUCTS
 
     [Zur Dokumentation](LAPTEQPLUS/index.md)
 
+-   :octicons-package-16: __LAP-TEQ PLUS Atmosphere__
+
+    ---
+
+    [Zur Dokumentation](LAPTEQPLUSATMOSPHERE/index.md)
+
+-   :octicons-package-16: __LAP-TEQ PLUS Elevation__
+
+    ---
+
+    [Zur Dokumentation](LAPTEQPLUSELEVATION/index.md)
+
 -   :octicons-code-16: __LAP-TEQ PLUS INTERFACE__
 
     ---
