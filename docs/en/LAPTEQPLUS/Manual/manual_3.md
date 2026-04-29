@@ -6,7 +6,6 @@
 
 - 1× LAP-TEQ Display PLUS (display module for short)
 - 2× LAP-TEQ PLUS INCLINOMETER
-- 1× Mains plug USB charger
 - 1× USB charging cable
 - 1× Calibration cable
 - 1× Safety instructions

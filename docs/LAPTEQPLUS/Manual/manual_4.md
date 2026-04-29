@@ -3,7 +3,7 @@
 ## 4.1 Akku laden
 Vor der ersten Inbetriebnahme muss der Akku aufgeladen werden.
 
-Ist kein Ladegerät angeschlossen, wird der Ladezustand des Akkus bei eingeschaltetem Gerät im Display angezeigt.
+Ist das Gerät nicht mit einer Stromquelle verbunden, wird der Ladezustand des Akkus bei eingeschaltetem Gerät im Display angezeigt.
 
 !!! abstract "Achtung!"
     **Gefahr von Geräteschäden!**
@@ -12,9 +12,6 @@ Ist kein Ladegerät angeschlossen, wird der Ladezustand des Akkus bei eingeschal
 
 !!! info "Hinweis"
     Der Li-Polymer-Akku kann jederzeit aufgeladen werden, ohne die Lebensdauer zu verkürzen. Eine Unterbrechung des Ladevorgangs beschädigt den Akku nicht.
-
-!!! info "Hinweis"
-    Ist der Akku vollständig geladen, stellt sich das Netzstecker-USB-Ladegerät automatisch auf Erhaltungsladung um. Der Akku kann dauerhaft in der Ladestation verbleiben.
 
 !!! info "Hinweis"
     Wenn das Gerät längere Zeit nicht verwendet wird, entlädt es sich. In diesem Fall muss es vor der Verwendung aufgeladen werden.
@@ -29,7 +26,7 @@ Ist kein Ladegerät angeschlossen, wird der Ladezustand des Akkus bei eingeschal
 <!-- TODO: Abbildung "Anschluss des Ladekabels am Displaymodul" einfügen -->
 
 * USB-Ladekabel (1) in die USB-Buchse (2) am Displaymodul stecken.
-* Netzstecker-USB-Ladegerät (3) in eine Schuko- oder Eurosteckdose stecken.
+* Das andere Ende des USB-Ladekabels mit einer geeigneten USB-Stromquelle (z. B. USB-Anschluss eines Computers oder Netzteil) verbinden.
 
 Bei eingeschaltetem Gerät wird der Ladevorgang durch einen blauen Pfeil im Display dargestellt.
 
@@ -39,7 +36,7 @@ Der Ladezustand wird durch die Kontrollleuchte (4) angezeigt:
 - Grüne LED – voll aufgeladen
 
 * Beenden Sie den Ladevorgang, wenn der Akku geladen ist.
-* Trennen Sie das Netzstecker-USB-Ladegerät vom Stromanschluss, solange Sie es nicht verwenden.
+* Trennen Sie das USB-Ladekabel von der Stromquelle, solange Sie es nicht verwenden.
 
 ## 4.2 Anschluss
 

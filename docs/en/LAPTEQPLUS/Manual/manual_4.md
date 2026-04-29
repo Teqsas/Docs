@@ -3,7 +3,7 @@
 ## 4.1 Charging the battery
 The battery must be charged before initial use.
 
-If no charger is connected, the battery charge level is shown on the display when the device is switched on.
+If the device is not connected to a power source, the battery charge level is shown on the display when the device is switched on.
 
 !!! abstract "Attention!"
     **Risk of damage to the appliance!**
@@ -12,9 +12,6 @@ If no charger is connected, the battery charge level is shown on the display whe
 
 !!! info "Note"
     The Li-Polymer battery can be charged at any time without shortening its service life. Interrupting the charging process does not damage the battery.
-
-!!! info "Note"
-    When the battery is fully charged, the mains plug USB charger automatically switches to trickle charging. The battery may remain in the charging station permanently.
 
 !!! info "Note"
     If the device is not used for a long time, it discharges. In that case it must be charged before use.
@@ -29,7 +26,7 @@ If no charger is connected, the battery charge level is shown on the display whe
 <!-- TODO: Insert image "Connecting the charging cable to the display module" -->
 
 * Plug the USB charging cable (1) into the USB socket (2) on the display module.
-* Plug the mains plug USB charger (3) into a Schuko or Euro mains socket.
+* Connect the other end of the USB charging cable to a suitable USB power source (e.g. USB port of a computer or a USB power adapter).
 
 When the device is switched on, the charging process is indicated by a blue arrow on the display.
 
@@ -39,7 +36,7 @@ The charge level is shown by the indicator light (4):
 - Green LED – fully charged
 
 * End the charging process once the battery is charged.
-* Disconnect the mains plug USB charger from the mains as long as you are not using it.
+* Disconnect the USB charging cable from the power source as long as you are not using it.
 
 ## 4.2 Connection
 
