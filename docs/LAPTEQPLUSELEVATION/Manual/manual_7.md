@@ -1,0 +1,46 @@
+# 7 Störungen und Hilfe
+
+!!! warning "Vorsicht!"
+    **Verletzungsgefahr!**
+
+    Unsachgemäße Reparaturen können dazu führen, dass ihr Gerät nicht mehr sicher funktioniert. Sie gefährden damit sich und Ihre Umgebung
+
+Oft sind es nur kleine Fehler, die zu einer Störung führen. Meistens können Sie diese leicht selbst beheben. Bitte sehen Sie zuerst in der folgenden Tabelle nach, bevor Sie sich an den Händler wenden. So ersparen Sie sich viel Mühe und eventuell auch Kosten.
+
+Wenn das Gerät gewartet werden soll, bringen Sie es zu Ihrem Vertriebspartner.
+
+| Fehler/Störung                                | Ursache                              | Abhilfe                                                                                                                                                                  |
+|-----------------------------------------------|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Gerät funktioniert nicht                      | Gerät defekt?                        | Service kontaktieren                                                                                                                                                     |
+| Laser nicht sichtbar                          | Schlechte Umgebungsbedingungen?      | Siehe Hinweis zu Umgebungsbedingungen in dieser Anleitung                                                                                                                 |
+|                                               | Kabel zu lang?                       | QLX-Kabel mit größerem Querschnitt verwenden                                                                                                                              |
+|                                               | Messentfernung zu groß?              | Wenn möglich, Messentfernung verringern                                                                                                                                  |
+| Im Display erscheint „?.?m" bzw. „?.?ft"      | Das Gerät findet keinen Endpunkt für die Messung | Messendpunkt und/oder Sichtlinie überprüfen. Kann sich das ELEVATION Modul frei auspendeln? Reflektierendes Material(Papier) auf Messendpunkt legen.        |
+| Im Display erscheinen drei Striche            | XLR-Kabel nicht korrekt eingesteckt  | XLR-Kabel fest eindrücken                                                                                                                                                 |
+
+Können Sie den Fehler nicht selbst beheben, wenden Sie sich bitte direkt an unseren Service. Beachten Sie bitte, dass durch unsachgemäße Reparaturen auch der Gewährleistungsanspruch erlischt und Ihnen ggf. Zusatzkosten entstehen.
+
+## 7.1 Servicecenter
+
+    TEQSAS GmbH
+    Otto-Hahn-Straße 20a
+    50354 Hürth
+    Deutschland
+    Tel.: +49 (0)2233 611-500
+    E-Mail: service@teqsas.de
+
+## 7.2 Umgebungsbedingungen beachten
+
+![Umgebungsbedingungen / Sichtbarkeit Laserstrahl](../../assets/elevation/elevation_environment.png "Umgebungsbedingungen – Sichtbarkeit Laserstrahl")
+
+Die Sichtbarkeit des Laserstrahls ist abhängig von der Umgebungshelligkeit. Generell gilt:
+
+* Gedämpftes Licht = gute Sichtbarkeit
+* Direktes Sonnenlicht = schlechte Sichtbarkeit
+* Regen, Staub oder Dampf = schlechte Sichtbarkeit
+
+Weitere störende Einflüsse:
+
+* Messungen durch Glas- oder Plastikscheiben
+* Verschmutzte Laseraustrittsöffnung
+* Starke Temperaturschwankungen: Gerät vor Benutzung in sehr kalter oder warmer Umgebung immer einige Zeit im Transportkoffer temperieren lassen.
