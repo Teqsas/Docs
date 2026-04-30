@@ -1,6 +1,6 @@
 # TEQSAS LAP-TEQ PLUS Elevation
 
-<!-- TODO: Produktbild LAP-TEQ PLUS Elevation hier einfügen, sobald hochgeladen -->
+![TEQSAS LAP-TEQ PLUS Elevation](../assets/elevation/elevation_cover.png "TEQSAS LAP-TEQ PLUS Elevation")
 
 Dies ist die Sammlung der Dokumente für das TEQSAS LAP-TEQ PLUS Elevation.
 

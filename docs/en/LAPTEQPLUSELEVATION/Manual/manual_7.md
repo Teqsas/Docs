@@ -31,7 +31,7 @@ If you cannot rectify the fault yourself, please contact our service team direct
 
 ## 7.2 Observe ambient conditions
 
-<!-- TODO: Insert image "Ambient conditions / laser beam visibility" -->
+![Ambient conditions / laser beam visibility](../../../assets/elevation/elevation_environment.png "Ambient conditions – laser beam visibility")
 
 The visibility of the laser beam depends on the ambient brightness. As a general rule:
 

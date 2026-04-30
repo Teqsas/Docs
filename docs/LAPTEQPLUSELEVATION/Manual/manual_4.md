@@ -17,7 +17,7 @@
 
     Alle Komponenten sind wartungsfrei. Geräte niemals öffnen, sonst verfällt der Garantieanspruch. Eine Ausnahme bildet das Öffnen der unteren Abdeckung zum Einstellen der Messeinheit und des Korrekturmodus
 
-<!-- TODO: Abbildung "Anschluss ELEVATION-Modul (1) am Eingang IN, XLR-Kabel (2), Displaymodul (3)" einfügen -->
+![Anschluss ELEVATION-Modul mit Displaymodul](../../assets/elevation/elevation_connection_display.png "Anschluss ELEVATION-Modul (1) – XLR-Kabel (2) – Displaymodul (3)")
 
 !!! info "Hinweis"
     Die Kabellänge (2) zwischen DISPLAY und ELEVATION darf eine Länge von 70m nicht überschreiten. Möchten Sie größere Entfernungen als70 m überbrücken, muss ein XLR-Kabel mit einem größeren Querschnitt als 0,22mm² verwendet werden.
@@ -33,7 +33,7 @@ Für die korrekte Funktion muss das Displaymodul über ein handelsübliches 3-Po
 
 ## 4.2 Anschluss eines LAP-TEQ PLUS Sensor (optional)
 
-<!-- TODO: Abbildung "Anschluss LAP-TEQ PLUS Sensor (1), XLR-Kabel (2), ELEVATION-Modul (3), Kabel (4)" einfügen -->
+![Anschluss LAP-TEQ PLUS Sensor mit ELEVATION-Modul](../../assets/elevation/elevation_connection_sensor.png "LAP-TEQ PLUS Sensor (1) – XLR-Kabel (2) – ELEVATION-Modul (3) – Kabel (4)")
 
 * Montieren Sie den LAP-TEQ PLUS Sensor (1) ebenfalls auf dem Flugrahmen oder dem MOUNTING BRACKET (siehe Gebrauchsanweisung LAP-TEQ PLUS).
 * Verbinden Sie den LAP-TEQ PLUS Sensor (1) mit der „THRU"-Buchse des ELEVATION Moduls (3) durch ein handelsübliches 3-pol XLR-Kabel (2).
@@ -42,8 +42,6 @@ Für die korrekte Funktion muss das Displaymodul über ein handelsübliches 3-Po
     Die Gesamtlänge der Kabel (2) + (4) zwischen LAP-TEQ PLUS Sensor, ELEVATION und Displaymodul darf nicht länger als 45 m sein. Möchten Sie größere Entfernungen als 45 m überbrücken, muss ein XLR-Kabel mit einem größeren Querschnitt als 0,22 mm² verwendet werden.
 
 ## 4.3 MOUNTING BRACKET befestigen (optional)
-
-<!-- TODO: Abbildung "MOUNTING BRACKET am Flugrahmen befestigen" einfügen -->
 
 * Platzieren Sie die Magnethalterung auf der Oberkante des Flugrahmens.
 * Sichern Sie die Magnethalterung am Flugrahmen mit dem Fangseil gegen Herunterfallen

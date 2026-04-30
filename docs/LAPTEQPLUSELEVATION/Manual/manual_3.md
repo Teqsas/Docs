@@ -10,7 +10,7 @@ Im Lieferumfang befindet sich folgende Teile:
 
 ## 3.2 Ihr Gerät im Überblick
 
-<!-- TODO: Übersichtsabbildung ELEVATION mit nummerierten Komponenten (1–6) einfügen -->
+![LAP-TEQ PLUS Elevation – Überblick](../../assets/elevation/elevation_overview.png "LAP-TEQ PLUS Elevation – Überblick")
 
 1. Ausgang Laserstrahlung
 2. Empfangslinse

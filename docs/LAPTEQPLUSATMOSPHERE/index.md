@@ -1,6 +1,6 @@
 # TEQSAS LAP-TEQ PLUS Atmosphere
 
-<!-- TODO: Produktbild LAP-TEQ PLUS Atmosphere hier einfügen, sobald hochgeladen -->
+![TEQSAS LAP-TEQ PLUS Atmosphere](../assets/atmosphere/atmosphere_cover.png "TEQSAS LAP-TEQ PLUS Atmosphere")
 
 Dies ist die Sammlung der Dokumente für das TEQSAS LAP-TEQ PLUS Atmosphere.
 

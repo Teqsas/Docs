@@ -10,7 +10,7 @@ If the ELEVATION module cannot swing freely (e.g. due to cable tension), the tri
 
 If the trigonometric correction is activated, a deviation from the vertical is corrected. The corrected value appears on the display. If it is deactivated, the actually measured – and possibly incorrect – value of the oblique measurement is displayed
 
-<!-- TODO: Insert image "DIP switches on the display module – cover caps (1), screws (2), DIP switches (3) and (4)" -->
+![DIP switches on the display module](../../../assets/elevation/elevation_dip_switches.png "DIP switches on the display module – cover caps (1), screws (2), DIP switches (3) and (4)")
 
 * Remove both cover caps (1) on the display module using a small screwdriver
 * Unscrew both screws (2)

@@ -2,7 +2,7 @@
 
 ## 3.1 Ihr Gerät im Überblick
 
-<!-- TODO: Übersichtsabbildung Atmosphere mit nummerierten Komponenten 1, 2, 3 einfügen -->
+![LAP-TEQ PLUS Atmosphere – Überblick](../../assets/atmosphere/atmosphere_overview.png "LAP-TEQ PLUS Atmosphere – Überblick")
 
 1. LAP-TEQ Port für weitere Sensoren im Daisy-Chain-Betrieb
 2. Ausgang für Messdaten

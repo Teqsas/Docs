@@ -17,7 +17,7 @@
 
     All components are maintenance-free. Never open the devices, otherwise the warranty will be invalidated. An exception is opening the lower cover to set the measurement unit and the correction mode
 
-<!-- TODO: Insert image "Connection ELEVATION module (1) at the IN input, XLR cable (2), display module (3)" -->
+![Connecting ELEVATION module to display module](../../../assets/elevation/elevation_connection_display.png "ELEVATION module (1) – XLR cable (2) – display module (3)")
 
 !!! info "Note"
     The cable length (2) between DISPLAY and ELEVATION must not exceed 70 m. If you want to bridge distances greater than 70 m, an XLR cable with a cross-section larger than 0.22 mm² must be used.
@@ -33,7 +33,7 @@ For correct operation, the display module must be connected to an ELEVATION via 
 
 ## 4.2 Connection of a LAP-TEQ PLUS Sensor (optional)
 
-<!-- TODO: Insert image "Connecting LAP-TEQ PLUS Sensor (1), XLR cable (2), ELEVATION module (3), cable (4)" -->
+![Connecting LAP-TEQ PLUS Sensor with ELEVATION module](../../../assets/elevation/elevation_connection_sensor.png "LAP-TEQ PLUS Sensor (1) – XLR cable (2) – ELEVATION module (3) – cable (4)")
 
 * Mount the LAP-TEQ PLUS Sensor (1) likewise on the flying frame or on the MOUNTING BRACKET (see instructions for use of the LAP-TEQ PLUS).
 * Connect the LAP-TEQ PLUS Sensor (1) to the "THRU" socket of the ELEVATION module (3) using a standard 3-pin XLR cable (2).
@@ -42,8 +42,6 @@ For correct operation, the display module must be connected to an ELEVATION via 
     The total length of the cables (2) + (4) between LAP-TEQ PLUS Sensor, ELEVATION and display module must not exceed 45 m. If you want to bridge distances greater than 45 m, an XLR cable with a cross-section larger than 0.22 mm² must be used.
 
 ## 4.3 Mounting the MOUNTING BRACKET (optional)
-
-<!-- TODO: Insert image "Mounting the MOUNTING BRACKET on the flying frame" -->
 
 * Place the magnetic holder on the upper edge of the flying frame.
 * Secure the magnetic holder to the flying frame against falling using the safety rope

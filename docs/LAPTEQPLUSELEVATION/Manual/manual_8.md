@@ -10,7 +10,7 @@ Sollte sich das ELEVATION Modul nicht frei auspendeln können (z.B. durch Kabelz
 
 Ist die trigonometrische Korrektur aktiviert, wird eine Abweichung aus der Senkrechten korrigiert. In der Anzeige erscheint der korrigierte Wert. Ist sie deaktiviert, wird der tatsächlich gemessene, unter Umständen fehlerhafte Wert der schrägen Messung angezeigt
 
-<!-- TODO: Abbildung "DIP-Schalter am Displaymodul – Abdeckkappen (1), Schrauben (2), DIP-Schalter (3) und (4)" einfügen -->
+![DIP-Schalter am Displaymodul](../../assets/elevation/elevation_dip_switches.png "DIP-Schalter am Displaymodul – Abdeckkappen (1), Schrauben (2), DIP-Schalter (3) und (4)")
 
 * Beide Abdeckkappen (1) am Displaymodul mit einem kleinen Schraubendreher entfernen
 * Beide Schrauben (2) herausdrehen

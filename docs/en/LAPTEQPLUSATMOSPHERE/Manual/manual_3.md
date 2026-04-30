@@ -2,7 +2,7 @@
 
 ## 3.1 Your device at a glance
 
-<!-- TODO: Insert overview image of Atmosphere with numbered components 1, 2, 3 -->
+![LAP-TEQ PLUS Atmosphere – Overview](../../../assets/atmosphere/atmosphere_overview.png "LAP-TEQ PLUS Atmosphere – Overview")
 
 1. LAP-TEQ Port for additional sensors in daisy-chain operation
 2. Output for measurement data

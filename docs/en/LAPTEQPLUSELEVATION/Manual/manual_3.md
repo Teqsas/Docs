@@ -10,7 +10,7 @@ The scope of delivery includes the following parts:
 
 ## 3.2 Your device at a glance
 
-<!-- TODO: Insert overview image of ELEVATION with numbered components (1–6) -->
+![LAP-TEQ PLUS Elevation – Overview](../../../assets/elevation/elevation_overview.png "LAP-TEQ PLUS Elevation – Overview")
 
 1. Laser radiation outlet
 2. Receiving lens

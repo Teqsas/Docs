@@ -31,7 +31,7 @@ Können Sie den Fehler nicht selbst beheben, wenden Sie sich bitte direkt an uns
 
 ## 7.2 Umgebungsbedingungen beachten
 
-<!-- TODO: Abbildung "Umgebungsbedingungen / Sichtbarkeit Laserstrahl" einfügen -->
+![Umgebungsbedingungen / Sichtbarkeit Laserstrahl](../../assets/elevation/elevation_environment.png "Umgebungsbedingungen – Sichtbarkeit Laserstrahl")
 
 Die Sichtbarkeit des Laserstrahls ist abhängig von der Umgebungshelligkeit. Generell gilt:
 
