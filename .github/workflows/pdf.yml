@@ -1,0 +1,103 @@
+name: pdf
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - claude/markdown-to-pdf-conversion-f92A0
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      PANDOC_VERSION: "3.5"
+      TYPST_VERSION: "0.12.0"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Pandoc
+        shell: bash
+        run: |
+          set -euxo pipefail
+          curl -fsSL "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" -o /tmp/pandoc.deb
+          sudo dpkg -i /tmp/pandoc.deb
+          pandoc --version
+
+      - name: Install Typst
+        shell: bash
+        run: |
+          set -euxo pipefail
+          curl -fsSL "https://github.com/typst/typst/releases/download/v${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.xz" -o /tmp/typst.tar.xz
+          mkdir -p /tmp/typst
+          tar -xf /tmp/typst.tar.xz -C /tmp/typst --strip-components=1
+          sudo mv /tmp/typst/typst /usr/local/bin/typst
+          typst --version
+
+      - name: List manual inputs
+        shell: bash
+        run: |
+          set -euxo pipefail
+          ls -la docs/LAPTEQPLUS/Manual/
+
+      - name: Build LAPTEQPLUS DE — Typst intermediate
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p build
+          cd docs/LAPTEQPLUS/Manual
+          pandoc \
+            manual_1.md manual_2.md manual_3.md manual_4.md manual_5.md \
+            manual_6.md manual_7.md manual_8.md manual_9.md manual_10.md \
+            manual_11.md manual_ce.md \
+            --from=markdown \
+            --to=typst \
+            --toc \
+            -V lang=de-DE \
+            --verbose \
+            -o "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.typ"
+          echo "--- first 80 lines of generated Typst ---"
+          head -n 80 "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.typ"
+
+      - name: Build LAPTEQPLUS DE — PDF
+        shell: bash
+        run: |
+          set -euxo pipefail
+          cd docs/LAPTEQPLUS/Manual
+          pandoc \
+            manual_1.md manual_2.md manual_3.md manual_4.md manual_5.md \
+            manual_6.md manual_7.md manual_8.md manual_9.md manual_10.md \
+            manual_11.md manual_ce.md \
+            --from=markdown \
+            --pdf-engine=typst \
+            --toc \
+            -V lang=de-DE \
+            --verbose \
+            -o "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.pdf"
+          ls -la "$GITHUB_WORKSPACE/build/"
+
+      - name: Diagnose failure (compile Typst directly)
+        if: failure()
+        shell: bash
+        run: |
+          set -euxo pipefail
+          echo "PDF build failed — running typst directly on the intermediate file for verbose error output."
+          if [ -f "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.typ" ]; then
+            typst compile "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.typ" "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.debug.pdf" || true
+          else
+            echo "No intermediate .typ file present."
+          fi
+          echo "--- workspace build/ contents ---"
+          ls -la "$GITHUB_WORKSPACE/build/" || true
+
+      - name: Upload build artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-build
+          path: build/
+          if-no-files-found: warn
