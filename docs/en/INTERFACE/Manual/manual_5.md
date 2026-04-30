@@ -22,7 +22,7 @@ Each color indicates measured values of a specific sensor:
 | Atmospheric measured values      | Blue   |
 | Load Readings                    | Yellow |
 
-<!-- TODO: Insert image "Color coding of the sensors – LAP-TEQ INCLINOMETER in green, ATMOSPHERE in blue and LOAD in yellow" -->
+![Color coding of the sensors. LAP-TEQ INCLINOMETER in green, ATMOSPHERE in blue and LOAD in yellow.](../../../assets/interface/web-ui-color-coding.jpg)
 
 ## 5.2 Software Updates
 
@@ -65,17 +65,20 @@ The Atmosphere Analyzer clearly interprets the atmospheric measured values of th
 
 The Atmosphere Analyzer is started via the icon on the Web UI interface. If the symbol is not visible, the software of the interface is not yet up to date. Please see chapter [5.2 Software Updates](manual_5.md#52-software-updates) heed.
 
+![Atmosphere Analyzer icon on the Interface Web UI](../../../assets/interface/atmosphere-analyzer-button.jpg)
+
 ### 5.4.1 Overview
 The surface is divided into three areas, at the bottom the ATMOSPHERE sensors can be added. In the area at the top left/center the attenuation of the air is displayed and to the right of it the groups are displayed.
 
-<!-- TODO: Insert screenshot "Atmosphere Analyzer overview" -->
+![Atmosphere Analyzer overview](../../../assets/interface/atmosphere-analyzer-overview.jpg)
 
 ### 5.4.2 Sensor
 
 #### Connect Sensor
-To add a sensor, click on one of the Add Sensor cards in the lower area. There you enter the network address of the INTERFACE and the port where the sensor is plugged in. Furthermore, the distance that is to be simulated in the model is entered here. Then you establish the connection via the Connect button.
 
-<!-- TODO: Insert screenshot "Add Sensor – card to add a sensor" -->
+![Add Sensor – card to add a sensor](../../../assets/interface/add-sensor-card.jpg){ align=left width=320 }
+
+To add a sensor, click on one of the Add Sensor cards in the lower area. There you enter the network address of the INTERFACE and the port where the sensor is plugged in. Furthermore, the distance that is to be simulated in the model is entered here. Then you establish the connection via the Connect button.
 
 #### Sensor functions
 Once connected, the sensor's readings and the set distance are used to calculate the air absorption. If you move the mouse over the curve in the diagram, you can read the exact values.
@@ -89,29 +92,38 @@ The stored reference measured values can also be viewed offline. The data is sto
 
 In the diagram, the curves of a sensor are displayed in the same color, with the reference measurement dashed and the live measurement solidified. Here, too, the display in the diagram can be switched on/off via the Show button.
 
-The Setup, Data and Groups tabs can be used to change the view of the sensor. In the Setup tab, the basic settings of the sensor can be changed. The Data tab displays the measured values and the Groups tab can be used to assign the sensor to one of four groups.
+![Atmosphere Analyzer with live measurement and stored reference](../../../assets/interface/atmosphere-analyzer-live.jpg)
 
-<!-- TODO: Insert screenshot "Sensor tabs Setup / Data / Groups" -->
+![Sensor tabs Setup / Data / Groups](../../../assets/interface/sensor-tabs.jpg){ align=left width=280 }
+
+The Setup, Data and Groups tabs can be used to change the view of the sensor. In the Setup tab, the basic settings of the sensor can be changed. The Data tab displays the measured values and the Groups tab can be used to assign the sensor to one of four groups.
 
 ### 5.4.3 Groups
 Sensors can be grouped together, and a group can consist of just a single sensor or many sensors. In the Groups tab, the sensor can be assigned to groups.
 
+![Average Groups – assign sensor to groups 1–4](../../../assets/interface/average-groups-tab.jpg){ align=left width=240 }
+
 Once sensors have been added to a group, the group curve is displayed on the chart.
 
 #### Group name and reference
+
+![Group name and reference](../../../assets/interface/group-name-reference.jpg){ align=right width=360 }
+
 In the group view area, the average speed of sound is displayed. Furthermore, the name of the group can be changed. To do this, simply click in the name field and change the name. Just like a sensor, a reference of the group can also be created. This can also be viewed offline.
 
 #### Time Delta
+
+![Time Delta display](../../../assets/interface/time-delta.jpg){ align=right width=400 }
+
 As soon as a reference of the group is saved and the added sensors are live, the time difference between the reference measurement and the current time can be displayed via the Delta button. This results from a change in air temperature and refers to the mean distance of the added sensors. This function is not available if the distance of a sensor has changed since the reference was saved and the current time.
 
-<!-- TODO: Insert screenshot "Time Delta display" -->
-
 #### Group Alerting
-If more than one group is created, the Average button can be used to display an average of the air absorption over the groups.
 
-<!-- TODO: Insert screenshot "Group Averaging (Average)" -->
+![Group Averaging (Average)](../../../assets/interface/group-averaging.jpg)
+
+If more than one group is created, the Average button can be used to display an average of the air absorption over the groups.
 
 ### 5.4.4 Settings
 The units used can be adjusted via the Setup button at the top right.
 
-<!-- TODO: Insert screenshot "Atmosphere Analyzer settings" -->
+![Atmosphere Analyzer settings](../../../assets/interface/atmosphere-analyzer-settings.jpg){ width=480 }
