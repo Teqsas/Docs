@@ -74,6 +74,7 @@ jobs:
             manual_11.md manual_ce.md \
             --from=markdown \
             --pdf-engine=typst \
+            --pdf-engine-opt="--root=$GITHUB_WORKSPACE" \
             --toc \
             -V lang=de-DE \
             --verbose \
@@ -87,7 +88,7 @@ jobs:
           set -euxo pipefail
           echo "PDF build failed — running typst directly on the intermediate file for verbose error output."
           if [ -f "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.typ" ]; then
-            typst compile "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.typ" "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.debug.pdf" || true
+            typst compile --root "$GITHUB_WORKSPACE" "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.typ" "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.debug.pdf" || true
           else
             echo "No intermediate .typ file present."
           fi
