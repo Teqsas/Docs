@@ -48,7 +48,8 @@ jobs:
             --pdf-engine=typst \
             --pdf-engine-opt="--root=$GITHUB_WORKSPACE" \
             --toc \
-            -V lang=de-DE \
+            -V lang=de \
+            -V region=DE \
             --verbose \
             -o "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.pdf" 2>&1 | tee "$GITHUB_WORKSPACE/build/build.log"
           ls -la "$GITHUB_WORKSPACE/build/"
