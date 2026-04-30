@@ -31,6 +31,8 @@ declare -A LANG_REGIONS=(
 
 failures=()
 built=()
+failed_logs_file="$REPO_ROOT/build/failed_logs.txt"
+: > "$failed_logs_file"
 
 for lang in de en; do
   base="${LANG_DIRS[$lang]}"
@@ -82,6 +84,7 @@ EOF
           --pdf-engine-opt="--root=$REPO_ROOT" \
           --include-in-header="$REPO_ROOT/pdf/preamble.typ" \
           --include-before-body="$cover_file" \
+          --lua-filter="$REPO_ROOT/pdf/images.lua" \
           --lua-filter="$REPO_ROOT/pdf/admonitions.lua" \
           --toc \
           -V title="${title} — ${subtitle}" \
@@ -99,6 +102,7 @@ EOF
       built+=("${product}/${lang}")
     else
       failures+=("${product}/${lang} (exit ${rc})")
+      basename "$log_file" >> "$failed_logs_file"
     fi
     echo
   done

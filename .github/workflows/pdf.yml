@@ -75,13 +75,15 @@ jobs:
               const tail = log.split('\n').slice(-50).join('\n');
               sections.push('### `install.log` (last 50 lines)\n\n```\n' + tail + '\n```');
             }
-            // Then per-build logs that contain "Error" or "error:"
-            if (fs.existsSync(dir)) {
-              for (const name of fs.readdirSync(dir).sort()) {
-                if (!name.endsWith('.log') || name === 'install.log') continue;
+            // Then only logs explicitly recorded as failed by build.sh
+            const failedListPath = path.join(dir, 'failed_logs.txt');
+            if (fs.existsSync(failedListPath)) {
+              const names = fs.readFileSync(failedListPath, 'utf8')
+                .split('\n').map(s => s.trim()).filter(Boolean);
+              for (const name of names) {
                 const full = path.join(dir, name);
+                if (!fs.existsSync(full)) continue;
                 const log = fs.readFileSync(full, 'utf8');
-                if (!/error/i.test(log)) continue;
                 const tail = log.split('\n').slice(-60).join('\n');
                 sections.push('### `' + name + '` (last 60 lines)\n\n```\n' + tail + '\n```');
               }
