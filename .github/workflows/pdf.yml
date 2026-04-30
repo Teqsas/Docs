@@ -57,38 +57,8 @@ jobs:
           # Don't fail the job if font install didn't succeed.
           true
 
-      - name: Build LAPTEQPLUS DE — PDF
-        run: |
-          set -euxo pipefail
-          cd docs/LAPTEQPLUS/Manual
-          files=(
-            manual_1.md manual_2.md manual_3.md manual_4.md manual_5.md
-            manual_6.md manual_7.md manual_8.md manual_9.md manual_10.md
-            manual_11.md manual_ce.md
-          )
-          {
-            for f in "${files[@]}"; do
-              cat "$f"
-              printf '\n\n'
-            done
-          } | python3 "$GITHUB_WORKSPACE/pdf/preprocess_admonitions.py" \
-            | pandoc \
-              --from=markdown+fenced_divs \
-              --pdf-engine=typst \
-              --pdf-engine-opt="--root=$GITHUB_WORKSPACE" \
-              --include-in-header="$GITHUB_WORKSPACE/pdf/preamble.typ" \
-              --include-before-body="$GITHUB_WORKSPACE/pdf/cover.typ" \
-              --lua-filter="$GITHUB_WORKSPACE/pdf/admonitions.lua" \
-              --toc \
-              -V title="LAP-TEQ PLUS — Bedienungsanleitung" \
-              -V toc-depth=3 \
-              -V lang=de \
-              -V region=DE \
-              -V mainfont=Ubuntu \
-              -V monofont="Ubuntu Mono" \
-              --verbose \
-              -o "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.pdf" 2>&1 | tee "$GITHUB_WORKSPACE/build/build.log"
-          ls -la "$GITHUB_WORKSPACE/build/"
+      - name: Build all manuals
+        run: bash pdf/build.sh
 
       - name: Post failure log as PR comment
         if: failure() && github.event_name == 'pull_request'
@@ -96,20 +66,31 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const candidates = ['build/build.log', 'build/install.log'];
+            const path = require('path');
+            const dir = 'build';
             const sections = [];
-            for (const p of candidates) {
-              if (fs.existsSync(p)) {
-                const log = fs.readFileSync(p, 'utf8');
-                const tail = log.split('\n').slice(-80).join('\n');
-                sections.push('### `' + p + '` (last 80 lines)\n\n```\n' + tail + '\n```');
+            // Always include install.log first if present
+            if (fs.existsSync(path.join(dir, 'install.log'))) {
+              const log = fs.readFileSync(path.join(dir, 'install.log'), 'utf8');
+              const tail = log.split('\n').slice(-50).join('\n');
+              sections.push('### `install.log` (last 50 lines)\n\n```\n' + tail + '\n```');
+            }
+            // Then per-build logs that contain "Error" or "error:"
+            if (fs.existsSync(dir)) {
+              for (const name of fs.readdirSync(dir).sort()) {
+                if (!name.endsWith('.log') || name === 'install.log') continue;
+                const full = path.join(dir, name);
+                const log = fs.readFileSync(full, 'utf8');
+                if (!/error/i.test(log)) continue;
+                const tail = log.split('\n').slice(-60).join('\n');
+                sections.push('### `' + name + '` (last 60 lines)\n\n```\n' + tail + '\n```');
               }
             }
             const runUrl = context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId;
             const header = '**`pdf` workflow failed.** Run: ' + runUrl + '\n\n';
             const body = sections.length
               ? header + sections.join('\n\n')
-              : header + '_No log files captured before the failure._';
+              : header + '_No relevant log output captured._';
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
