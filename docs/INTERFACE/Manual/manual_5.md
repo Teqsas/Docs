@@ -22,7 +22,7 @@ Jede Farbe kennzeichnet Messwerte eines bestimmten Sensors:
 | Atmosphärische Messwerte        | Blau  |
 | Lastmesswerte                   | Gelb  |
 
-<!-- TODO: Abbildung "Farbkennzeichnung der Sensoren – LAP-TEQ INCLINOMETER in grün, ATMOSPHERE in Blau und LOAD in Gelb" einfügen -->
+![Farbkennzeichnung der Sensoren. LAP-TEQ INCLINOMETER in grün, ATMOSPHERE in Blau und LOAD in Gelb.](../../assets/interface/web-ui-color-coding.jpg)
 
 ## 5.2 Software Updates
 
@@ -65,17 +65,19 @@ Durch den Atmosphere Analyzer werden die atmosphärischen Messwerte des LAP-TEQ 
 
 Gestartet wird der Atmosphere Analyzer über das Symbol auf der Interface Web-UI. Sollte das Symbol nicht sichtbar sein, ist die Software des Interface noch nicht auf dem aktuellsten Stand. Dazu bitte Kapitel [5.2 Software Updates](manual_5.md#52-software-updates) beachten.
 
+![Atmosphere-Analyzer-Symbol auf der Interface Web-UI](../../assets/interface/atmosphere-analyzer-button.jpg)
+
 ### 5.4.1 Übersicht
 Die Oberfläche ist in drei Bereiche aufgeteilt, unten können die ATMOSPHERE Sensoren hinzugefügt werden. In dem Bereich oben Links/Mitte wird die Dämpfung der Luft angezeigt und rechts daneben werden die Gruppen angezeigt.
 
-<!-- TODO: Screenshot "Atmosphere Analyzer Übersicht" einfügen -->
+![Atmosphere Analyzer Übersicht](../../assets/interface/atmosphere-analyzer-overview.jpg)
 
 ### 5.4.2 Sensor
 
 #### Sensor verbinden
-Um einen Sensor hinzuzufügen, klickt man auf eine der Karten Add Sensor im unteren Bereich. Dort gibt man die Netzwerkadresse des INTERFACE und den Port, an dem der Sensor steckt, ein. Weiterhin wird hier der Abstand eingegeben, der im Modell simuliert werden soll, eingegeben. Anschließend stellt man die Verbindung über den Button Connect her.
+![Add Sensor – Karte zum Hinzufügen eines Sensors](../../assets/interface/add-sensor-card.jpg){ align=left width=320 }
 
-<!-- TODO: Screenshot "Add Sensor – Karte zum Hinzufügen eines Sensors" einfügen -->
+Um einen Sensor hinzuzufügen, klickt man auf eine der Karten Add Sensor im unteren Bereich. Dort gibt man die Netzwerkadresse des INTERFACE und den Port, an dem der Sensor steckt, ein. Weiterhin wird hier der Abstand eingegeben, der im Modell simuliert werden soll, eingegeben. Anschließend stellt man die Verbindung über den Button Connect her.
 
 #### Sensor Funktionen
 Sobald die Verbindung hergestellt ist, werden die Messwerte des Sensors und die eingestellte Entfernung genutzt, um die Luftabsorption zu berechnen. Bewegt man die Maus im Diagramm über die Kurve, kann man die genauen Werte ablesen.
@@ -89,29 +91,38 @@ Die gespeicherten Referenz-Messwerte können auch Offline angezeigt werden. Die 
 
 Im Diagramm werden die Kurven eines Sensors in gleicher Farbe dargestellt, wobei die Referenz-Messung gestrichelt und die Live-Messung durchgezogen dargestellt wird. Auch hier, kann die Anzeige im Diagramm über den Button Show an-/ ausgeschaltet werden.
 
-Über die Tabs Setup, Data und Groups kann man die Ansicht des Sensors ändern. In dem Tab Setup können die Grundeinstellungen des Sensors geändert werden. Im Data-Tab werden die Messwerte angezeigt und über den Tab Groups kann der Sensor einer von vier Gruppen zugewiesen werden.
+![Atmosphere Analyzer mit Live-Messung und gespeicherter Referenz](../../assets/interface/atmosphere-analyzer-live.jpg)
 
-<!-- TODO: Screenshot "Sensor-Tabs Setup / Data / Groups" einfügen -->
+![Sensor-Tabs Setup / Data / Groups](../../assets/interface/sensor-tabs.jpg){ align=left width=280 }
+
+Über die Tabs Setup, Data und Groups kann man die Ansicht des Sensors ändern. In dem Tab Setup können die Grundeinstellungen des Sensors geändert werden. Im Data-Tab werden die Messwerte angezeigt und über den Tab Groups kann der Sensor einer von vier Gruppen zugewiesen werden.
 
 ### 5.4.3 Gruppen
 Sensoren können in Gruppen zusammengefasst werden, dabei kann eine Gruppe auch bloß aus einem einzelnen oder vielen Sensoren bestehen. Im Tab Groups kann der Sensor Gruppen zugewiesen werden.
 
+![Average Groups – Sensor-Zuweisung zu Gruppen 1–4](../../assets/interface/average-groups-tab.jpg){ align=left width=240 }
+
 Sobald einer Gruppe Sensoren hinzugefügt wurden, wird die Gruppenkurve im Diagramm angezeigt.
 
 #### Gruppenname und Referenz
+
+![Gruppenname und Referenz](../../assets/interface/group-name-reference.jpg){ align=right width=360 }
+
 Im Bereich der Gruppenansicht wird die mittlere Schallgeschwindigkeit angezeigt. Weiterhin kann der Name der Gruppe geändert werden. Dazu einfach ins Namensfeld klicken und den Namen ändern. Genau wie ein Sensor, kann auch eine Referenz der Gruppe angelegt werden. Diese kann auch Offline angezeigt werden.
 
 #### Zeit-Delta
+
+![Zeit-Delta-Anzeige](../../assets/interface/time-delta.jpg){ align=right width=400 }
+
 Sobald eine Referenz der Gruppe gespeichert ist und die hinzugefügten Sensoren Live sind, kann über den Button Delta die zeitliche Differenz zwischen Referenzmessung und aktuellem Zeitpunkt angezeigt werden. Dieser ergibt sich aus einer geänderten Lufttemperatur und bezieht sich auf die mittlere Entfernung, der hinzugefügten Sensoren. Diese Funktion ist nicht verfügbar, wenn sich seit Speicherung der Referenz und aktuellem Zeitpunkt die Entfernung eines Sensors verändert hat.
 
-<!-- TODO: Screenshot "Zeit-Delta-Anzeige" einfügen -->
-
 #### Gruppen-Mittelung
-Wenn mehr als eine Gruppe angelegt ist, kann über den Button Average eine Mittelung der Luftabsorption über die Gruppen angezeigt werden.
 
-<!-- TODO: Screenshot "Gruppen-Mittelung (Average)" einfügen -->
+![Gruppen-Mittelung (Average)](../../assets/interface/group-averaging.jpg)
+
+Wenn mehr als eine Gruppe angelegt ist, kann über den Button Average eine Mittelung der Luftabsorption über die Gruppen angezeigt werden.
 
 ### 5.4.4 Einstellungen
 Über den Button Setup oben rechts können die genutzten Einheiten angepasst werden.
 
-<!-- TODO: Screenshot "Atmosphere-Analyzer-Einstellungen" einfügen -->
+![Atmosphere-Analyzer-Einstellungen](../../assets/interface/atmosphere-analyzer-settings.jpg){ width=480 }

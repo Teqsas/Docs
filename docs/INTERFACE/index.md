@@ -1,6 +1,6 @@
 # TEQSAS LAP-TEQ PLUS INTERFACE
 
-<!-- TODO: Produktbild LAP-TEQ PLUS INTERFACE hier einfügen, sobald hochgeladen -->
+![LAP-TEQ PLUS INTERFACE](../assets/interface/lap-teq-interface-product.jpg){ width=480 }
 
 Dies ist die Sammlung der Dokumente für das TEQSAS LAP-TEQ PLUS INTERFACE.
 
