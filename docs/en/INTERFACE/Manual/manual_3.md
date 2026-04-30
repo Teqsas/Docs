@@ -2,7 +2,7 @@
 
 ## 3.1 Your device at a glance
 
-<!-- TODO: Insert overview image of the LAP-TEQ Interface -->
+![LAP-TEQ PLUS INTERFACE](../../../assets/interface/lap-teq-interface-product.jpg){ width=480 }
 
 The interface is a handy device that is powered by 230V. It is available as a standalone version with three sensor inputs and as a plug-in board for the LAP-TEQ motion receiver. The three sensor inputs are designed as LAP-TEQ interfaces and can be connected to all LAP-TEQ sensors, such as the ELEVATION, the ATMOSPHERE or the INCLINOMETER, among others.
 
