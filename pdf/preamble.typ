@@ -1,14 +1,18 @@
 // Show-Rules und Helper-Funktionen, via --include-in-header eingespeist.
 
-// ---------- Admonitions ----------
+// ---------- Admonitions (Farben nach ANSI Z535.6 / ISO 3864) ----------
 
 #let admonition_palette = (
-  danger:   (border: rgb("#cc0000"), fill: rgb("#fdecec"), label: "Gefahr"),
-  warning:  (border: rgb("#cc7700"), fill: rgb("#fff6e8"), label: "Warnung"),
-  info:     (border: rgb("#005599"), fill: rgb("#eef4fa"), label: "Hinweis"),
-  abstract: (border: rgb("#555555"), fill: rgb("#f1f1f1"), label: "Achtung"),
-  note:     (border: rgb("#005599"), fill: rgb("#eef4fa"), label: "Hinweis"),
-  tip:      (border: rgb("#0a8754"), fill: rgb("#eaf6ee"), label: "Tipp"),
+  // Norm-Stufen (vom Lua-Filter via Title gesetzt)
+  danger:   (border: rgb("#C8102E"), fill: rgb("#fdeceb"), label: "GEFAHR"),
+  warning:  (border: rgb("#ED760E"), fill: rgb("#fff3e0"), label: "WARNUNG"),
+  caution:  (border: rgb("#F9A800"), fill: rgb("#fff8d6"), label: "VORSICHT"),
+  notice:   (border: rgb("#0072CE"), fill: rgb("#e6f0fa"), label: "HINWEIS"),
+  // Fallbacks fuer MkDocs-Klassen, falls kein Title gesetzt
+  info:     (border: rgb("#0072CE"), fill: rgb("#e6f0fa"), label: "HINWEIS"),
+  abstract: (border: rgb("#0072CE"), fill: rgb("#e6f0fa"), label: "HINWEIS"),
+  note:     (border: rgb("#0072CE"), fill: rgb("#e6f0fa"), label: "HINWEIS"),
+  tip:      (border: rgb("#00664F"), fill: rgb("#eaf6ee"), label: "TIPP"),
 )
 
 #let admonition(kind: "info", title: none, body) = {
@@ -22,7 +26,7 @@
     stroke: (left: 3pt + p.border),
     breakable: false,
     [
-      #text(weight: "bold", fill: p.border)[#header_text]
+      #text(weight: "bold", fill: p.border)[#upper(header_text)]
       #v(0.3em)
       #body
     ],

@@ -19,11 +19,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Pandoc
+      - name: Install Pandoc and Ubuntu fonts
         run: |
           set -euxo pipefail
           curl -fsSL "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" -o /tmp/pandoc.deb
           sudo dpkg -i /tmp/pandoc.deb
+          sudo apt-get update
+          sudo apt-get install -y fonts-ubuntu
+          fc-list | grep -i ubuntu | head -5
           pandoc --version
 
       - name: Install Typst
@@ -63,6 +66,8 @@ jobs:
               -V toc-depth=3 \
               -V lang=de \
               -V region=DE \
+              -V mainfont=Ubuntu \
+              -V monofont="Ubuntu Mono" \
               --verbose \
               -o "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.pdf" 2>&1 | tee "$GITHUB_WORKSPACE/build/build.log"
           ls -la "$GITHUB_WORKSPACE/build/"
