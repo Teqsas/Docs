@@ -19,29 +19,47 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Pandoc and Ubuntu fonts
+      - name: Prepare build dir
+        run: mkdir -p build
+
+      - name: Install Pandoc
         run: |
-          set -euxo pipefail
-          curl -fsSL "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" -o /tmp/pandoc.deb
-          sudo dpkg -i /tmp/pandoc.deb
-          sudo apt-get update
-          sudo apt-get install -y fonts-ubuntu
-          fc-list | grep -i ubuntu | head -5
-          pandoc --version
+          set -uxo pipefail
+          {
+            curl -fsSL "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" -o /tmp/pandoc.deb
+            sudo dpkg -i /tmp/pandoc.deb
+            pandoc --version
+          } 2>&1 | tee -a build/install.log
+          exit "${PIPESTATUS[0]}"
 
       - name: Install Typst
         run: |
-          set -euxo pipefail
-          curl -fsSL "https://github.com/typst/typst/releases/download/v${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.xz" -o /tmp/typst.tar.xz
-          mkdir -p /tmp/typst
-          tar -xf /tmp/typst.tar.xz -C /tmp/typst --strip-components=1
-          sudo mv /tmp/typst/typst /usr/local/bin/typst
-          typst --version
+          set -uxo pipefail
+          {
+            curl -fsSL "https://github.com/typst/typst/releases/download/v${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.xz" -o /tmp/typst.tar.xz
+            mkdir -p /tmp/typst
+            tar -xf /tmp/typst.tar.xz -C /tmp/typst --strip-components=1
+            sudo mv /tmp/typst/typst /usr/local/bin/typst
+            typst --version
+          } 2>&1 | tee -a build/install.log
+          exit "${PIPESTATUS[0]}"
+
+      - name: Install Ubuntu font (best effort)
+        run: |
+          set -uxo pipefail
+          {
+            sudo apt-get update
+            sudo apt-get install -y fonts-ubuntu \
+              || sudo apt-get install -y ttf-ubuntu-font-family \
+              || echo "WARN: Ubuntu font not installed via apt; will fall back to default"
+            fc-list | grep -i ubuntu || echo "No Ubuntu font registered"
+          } 2>&1 | tee -a build/install.log
+          # Don't fail the job if font install didn't succeed.
+          true
 
       - name: Build LAPTEQPLUS DE — PDF
         run: |
           set -euxo pipefail
-          mkdir -p build
           cd docs/LAPTEQPLUS/Manual
           files=(
             manual_1.md manual_2.md manual_3.md manual_4.md manual_5.md
@@ -78,18 +96,20 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const path = 'build/build.log';
-            let body;
-            if (fs.existsSync(path)) {
-              const log = fs.readFileSync(path, 'utf8');
-              const tail = log.split('\n').slice(-100).join('\n');
-              body =
-                '**`pdf` workflow failed.** Last 100 lines of build log:\n\n' +
-                '```\n' + tail + '\n```\n\n' +
-                'Run: ' + context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId;
-            } else {
-              body = '**`pdf` workflow failed** before producing a build log. Run: ' + context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId;
+            const candidates = ['build/build.log', 'build/install.log'];
+            const sections = [];
+            for (const p of candidates) {
+              if (fs.existsSync(p)) {
+                const log = fs.readFileSync(p, 'utf8');
+                const tail = log.split('\n').slice(-80).join('\n');
+                sections.push('### `' + p + '` (last 80 lines)\n\n```\n' + tail + '\n```');
+              }
             }
+            const runUrl = context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId;
+            const header = '**`pdf` workflow failed.** Run: ' + runUrl + '\n\n';
+            const body = sections.length
+              ? header + sections.join('\n\n')
+              : header + '_No log files captured before the failure._';
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
