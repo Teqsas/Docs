@@ -1,6 +1,65 @@
-// Show-Rules werden vor #show: doc => conf(...) eingefuegt und ueberschreiben
-// das Default-Styling von Pandocs Typst-Template fuer ueberschriften, Tabellen,
-// Code, Links und Listen.
+// Show-Rules und Helper-Funktionen, via --include-in-header eingespeist.
+
+// ---------- Admonitions ----------
+
+#let admonition_palette = (
+  danger:   (border: rgb("#cc0000"), fill: rgb("#fdecec"), label: "Gefahr"),
+  warning:  (border: rgb("#cc7700"), fill: rgb("#fff6e8"), label: "Warnung"),
+  info:     (border: rgb("#005599"), fill: rgb("#eef4fa"), label: "Hinweis"),
+  abstract: (border: rgb("#555555"), fill: rgb("#f1f1f1"), label: "Achtung"),
+  note:     (border: rgb("#005599"), fill: rgb("#eef4fa"), label: "Hinweis"),
+  tip:      (border: rgb("#0a8754"), fill: rgb("#eaf6ee"), label: "Tipp"),
+)
+
+#let admonition(kind: "info", title: none, body) = {
+  let p = admonition_palette.at(kind, default: admonition_palette.info)
+  let header_text = if title != none and title != "" { title } else { p.label }
+  block(
+    width: 100%,
+    inset: 10pt,
+    radius: 3pt,
+    fill: p.fill,
+    stroke: (left: 3pt + p.border),
+    breakable: false,
+    [
+      #text(weight: "bold", fill: p.border)[#header_text]
+      #v(0.3em)
+      #body
+    ],
+  )
+  v(0.4em)
+}
+
+// ---------- Cover ----------
+
+#let cover(
+  title: "",
+  vendor: "TEQSAS PRODUCTS",
+  subtitle: "Bedienungsanleitung",
+  logo: none,
+) = {
+  set page(header: none, footer: none, numbering: none)
+  v(1.5fr)
+  if logo != none {
+    align(center)[#image(logo, width: 55mm)]
+    v(1.2em)
+  }
+  align(center)[
+    #text(size: 11pt, weight: "bold", tracking: 2pt, fill: rgb("#222"))[#vendor]
+  ]
+  v(2.5fr)
+  align(center)[
+    #text(size: 30pt, weight: "bold")[#title]
+  ]
+  v(0.8em)
+  align(center)[
+    #text(size: 13pt, fill: rgb("#555"))[#subtitle]
+  ]
+  v(3fr)
+  pagebreak()
+}
+
+// ---------- Show-Rules ----------
 
 #show heading.where(level: 1): it => {
   pagebreak(weak: true)

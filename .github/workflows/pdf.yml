@@ -40,21 +40,31 @@ jobs:
           set -euxo pipefail
           mkdir -p build
           cd docs/LAPTEQPLUS/Manual
-          pandoc \
-            manual_1.md manual_2.md manual_3.md manual_4.md manual_5.md \
-            manual_6.md manual_7.md manual_8.md manual_9.md manual_10.md \
-            manual_11.md manual_ce.md \
-            --from=markdown \
-            --pdf-engine=typst \
-            --pdf-engine-opt="--root=$GITHUB_WORKSPACE" \
-            --include-in-header="$GITHUB_WORKSPACE/pdf/preamble.typ" \
-            --toc \
-            -V title="LAP-TEQ PLUS — Bedienungsanleitung" \
-            -V toc-depth=3 \
-            -V lang=de \
-            -V region=DE \
-            --verbose \
-            -o "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.pdf" 2>&1 | tee "$GITHUB_WORKSPACE/build/build.log"
+          files=(
+            manual_1.md manual_2.md manual_3.md manual_4.md manual_5.md
+            manual_6.md manual_7.md manual_8.md manual_9.md manual_10.md
+            manual_11.md manual_ce.md
+          )
+          {
+            for f in "${files[@]}"; do
+              cat "$f"
+              printf '\n\n'
+            done
+          } | python3 "$GITHUB_WORKSPACE/pdf/preprocess_admonitions.py" \
+            | pandoc \
+              --from=markdown+fenced_divs \
+              --pdf-engine=typst \
+              --pdf-engine-opt="--root=$GITHUB_WORKSPACE" \
+              --include-in-header="$GITHUB_WORKSPACE/pdf/preamble.typ" \
+              --include-before-body="$GITHUB_WORKSPACE/pdf/cover.typ" \
+              --lua-filter="$GITHUB_WORKSPACE/pdf/admonitions.lua" \
+              --toc \
+              -V title="LAP-TEQ PLUS — Bedienungsanleitung" \
+              -V toc-depth=3 \
+              -V lang=de \
+              -V region=DE \
+              --verbose \
+              -o "$GITHUB_WORKSPACE/build/LAPTEQPLUS_DE.pdf" 2>&1 | tee "$GITHUB_WORKSPACE/build/build.log"
           ls -la "$GITHUB_WORKSPACE/build/"
 
       - name: Post failure log as PR comment
