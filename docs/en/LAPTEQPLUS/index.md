@@ -1,3 +1,7 @@
+---
+title: LAP-TEQ PLUS
+---
+
 # TEQSAS LAP-TEQ PLUS
 
 <!-- TODO: Insert product image of LAP-TEQ PLUS once uploaded -->

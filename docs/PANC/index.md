@@ -1,3 +1,8 @@
+---
+title: PAN-C
+cover_image: assets/panc/PAN-C_V2_1_.png
+---
+
 # TEQSAS PAN-C
 
 ![TEQSAS PAN-C](../assets/panc/PAN-C_V2_1_.png "TEQSAS PAN-C")

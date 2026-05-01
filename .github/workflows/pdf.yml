@@ -1,0 +1,167 @@
+name: pdf
+
+on:
+  push:
+    branches: [main, master]
+    paths-ignore:
+      - 'docs/assets/downloads/**'
+  pull_request:
+    paths-ignore:
+      - 'docs/assets/downloads/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      PANDOC_VERSION: "3.5"
+      TYPST_VERSION: "0.12.0"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # On pull_request events GitHub checks out the synthetic merge
+          # commit by default, which we can't push back to. Pick the head
+          # branch for PRs, the actual branch name otherwise.
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - name: Prepare build dir
+        run: mkdir -p build
+
+      - name: Install Pandoc
+        run: |
+          set -uxo pipefail
+          {
+            curl -fsSL "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb" -o /tmp/pandoc.deb
+            sudo dpkg -i /tmp/pandoc.deb
+            pandoc --version
+          } 2>&1 | tee -a build/install.log
+          exit "${PIPESTATUS[0]}"
+
+      - name: Install Typst
+        run: |
+          set -uxo pipefail
+          {
+            curl -fsSL "https://github.com/typst/typst/releases/download/v${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.xz" -o /tmp/typst.tar.xz
+            mkdir -p /tmp/typst
+            tar -xf /tmp/typst.tar.xz -C /tmp/typst --strip-components=1
+            sudo mv /tmp/typst/typst /usr/local/bin/typst
+            typst --version
+          } 2>&1 | tee -a build/install.log
+          exit "${PIPESTATUS[0]}"
+
+      - name: Install Ubuntu font (best effort)
+        run: |
+          set -uxo pipefail
+          {
+            sudo apt-get update
+            sudo apt-get install -y fonts-ubuntu \
+              || sudo apt-get install -y ttf-ubuntu-font-family \
+              || echo "WARN: Ubuntu font not installed via apt; will fall back to default"
+            fc-list | grep -i ubuntu || echo "No Ubuntu font registered"
+          } 2>&1 | tee -a build/install.log
+          # Don't fail the job if font install didn't succeed.
+          true
+
+      - name: Validate product structure
+        run: |
+          set -uxo pipefail
+          python3 pdf/validate_products.py 2>&1 | tee build/validate.log
+          exit "${PIPESTATUS[0]}"
+
+      - name: Build all manuals
+        run: bash pdf/build.sh
+
+      - name: Post failure log as PR comment
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const dir = 'build';
+            const sections = [];
+            // Always include install.log first if present
+            if (fs.existsSync(path.join(dir, 'install.log'))) {
+              const log = fs.readFileSync(path.join(dir, 'install.log'), 'utf8');
+              const tail = log.split('\n').slice(-50).join('\n');
+              sections.push('### `install.log` (last 50 lines)\n\n```\n' + tail + '\n```');
+            }
+            if (fs.existsSync(path.join(dir, 'validate.log'))) {
+              const log = fs.readFileSync(path.join(dir, 'validate.log'), 'utf8');
+              sections.push('### `validate.log`\n\n```\n' + log + '\n```');
+            }
+            // Publish step log (push errors etc.)
+            if (fs.existsSync(path.join(dir, 'publish.log'))) {
+              const log = fs.readFileSync(path.join(dir, 'publish.log'), 'utf8');
+              const tail = log.split('\n').slice(-60).join('\n');
+              sections.push('### `publish.log` (last 60 lines)\n\n```\n' + tail + '\n```');
+            }
+            // Then only logs explicitly recorded as failed by build.sh
+            const failedListPath = path.join(dir, 'failed_logs.txt');
+            if (fs.existsSync(failedListPath)) {
+              const names = fs.readFileSync(failedListPath, 'utf8')
+                .split('\n').map(s => s.trim()).filter(Boolean);
+              for (const name of names) {
+                const full = path.join(dir, name);
+                if (!fs.existsSync(full)) continue;
+                const log = fs.readFileSync(full, 'utf8');
+                const tail = log.split('\n').slice(-60).join('\n');
+                sections.push('### `' + name + '` (last 60 lines)\n\n```\n' + tail + '\n```');
+              }
+            }
+            const runUrl = context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo + '/actions/runs/' + context.runId;
+            const header = '**`pdf` workflow failed.** Run: ' + runUrl + '\n\n';
+            const body = sections.length
+              ? header + sections.join('\n\n')
+              : header + '_No relevant log output captured._';
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body
+            });
+
+      - name: Publish PDFs to docs/assets/downloads
+        if: success()
+        env:
+          TARGET_BRANCH: ${{ github.head_ref || github.ref_name }}
+        run: |
+          set -uxo pipefail
+          {
+            set -e
+            dest=docs/assets/downloads
+            mkdir -p "$dest"
+            cp build/*.pdf "$dest/"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add "$dest"
+            if git diff --cached --quiet; then
+              echo "No PDF changes to commit"
+              exit 0
+            fi
+            git commit -m "chore(pdf): publish manuals to docs/assets/downloads"
+            set +e
+            for attempt in 1 2 3; do
+              if git push origin "HEAD:${TARGET_BRANCH}"; then
+                echo "push ok on attempt ${attempt}"
+                exit 0
+              fi
+              echo "push attempt ${attempt} failed; rebasing on origin/${TARGET_BRANCH}"
+              git fetch origin "${TARGET_BRANCH}" || true
+              git rebase "origin/${TARGET_BRANCH}" || git rebase --abort || true
+            done
+            echo "ERROR: push failed after 3 attempts"
+            exit 1
+          } 2>&1 | tee build/publish.log
+          exit "${PIPESTATUS[0]}"
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-build
+          path: build/
+          if-no-files-found: error

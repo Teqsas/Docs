@@ -1,3 +1,8 @@
+---
+title: LAP-TEQ PLUS INTERFACE
+cover_image: assets/interface/lap-teq-interface-product.jpg
+---
+
 # TEQSAS LAP-TEQ PLUS INTERFACE
 
 ![LAP-TEQ PLUS INTERFACE](../../assets/interface/lap-teq-interface-product.jpg){ width=480 }

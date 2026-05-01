@@ -1,6 +1,11 @@
 site_name: TEQSAS PRODUCTS
 site_url: https://docs.teqsas.de/
 
+# Skeleton/template directories under docs/ that are not part of the rendered
+# site (used as copy-paste sources for new products — see AGENTS.md).
+exclude_docs: |
+  _template/
+
 extra_css:
   - stylesheets/extra.css
 
