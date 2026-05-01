@@ -3,11 +3,15 @@ name: pdf
 on:
   push:
     branches: [main, master]
+    paths-ignore:
+      - 'docs/assets/downloads/**'
   pull_request:
+    paths-ignore:
+      - 'docs/assets/downloads/**'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 
 jobs:
@@ -18,6 +22,11 @@ jobs:
       TYPST_VERSION: "0.12.0"
     steps:
       - uses: actions/checkout@v4
+        with:
+          # On pull_request events GitHub checks out the synthetic merge
+          # commit by default, which we can't push back to. Pick the head
+          # branch for PRs, the actual branch name otherwise.
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - name: Prepare build dir
         run: mkdir -p build
@@ -99,6 +108,23 @@ jobs:
               repo: context.repo.repo,
               body
             });
+
+      - name: Publish PDFs to docs/assets/downloads
+        if: success()
+        run: |
+          set -euxo pipefail
+          dest=docs/assets/downloads
+          mkdir -p "$dest"
+          cp build/*.pdf "$dest/"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$dest"
+          if git diff --cached --quiet; then
+            echo "No PDF changes to commit"
+            exit 0
+          fi
+          git commit -m "chore(pdf): publish manuals to docs/assets/downloads"
+          git push origin "HEAD:${{ github.head_ref || github.ref_name }}"
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
