@@ -66,6 +66,12 @@ jobs:
           # Don't fail the job if font install didn't succeed.
           true
 
+      - name: Validate product structure
+        run: |
+          set -uxo pipefail
+          python3 pdf/validate_products.py 2>&1 | tee build/validate.log
+          exit "${PIPESTATUS[0]}"
+
       - name: Build all manuals
         run: bash pdf/build.sh
 
@@ -83,6 +89,10 @@ jobs:
               const log = fs.readFileSync(path.join(dir, 'install.log'), 'utf8');
               const tail = log.split('\n').slice(-50).join('\n');
               sections.push('### `install.log` (last 50 lines)\n\n```\n' + tail + '\n```');
+            }
+            if (fs.existsSync(path.join(dir, 'validate.log'))) {
+              const log = fs.readFileSync(path.join(dir, 'validate.log'), 'utf8');
+              sections.push('### `validate.log`\n\n```\n' + log + '\n```');
             }
             // Publish step log (push errors etc.)
             if (fs.existsSync(path.join(dir, 'publish.log'))) {

@@ -32,7 +32,7 @@ mapfile -t PRODUCTS < <(
         {
           rel = substr($0, length(repo) + 1)
           n = split(rel, parts, "/")
-          if (parts[1] != "en") print parts[1]
+          if (parts[1] != "en" && parts[1] !~ /^_/) print parts[1]
         }
       ' | sort -u
 )
