@@ -266,7 +266,7 @@ Servicecenter-Adresse (Otto-Hahn-Straße 20a, 50354 Hürth, Deutschland) wird au
 
 ## PDF-Generierung
 
-Jede Bedienungsanleitung wird zusätzlich als PDF gebaut und unter `docs/assets/downloads/<PRODUKT>_<LANG>.pdf` ins Repo committet.
+Jede Bedienungsanleitung wird zusätzlich als PDF gebaut und unter `docs/assets/downloads/<PRODUKT>_MANUAL_<LANG>.pdf` ins Repo committet. Das `MANUAL`-Token im Filename ist das Asset-Typ-Token aus der Downloads-Konvention (siehe Abschnitt „Downloads-Bereich").
 
 **Pipeline:** Pandoc 3.5 parst das Markdown → Typst 0.12 setzt das PDF.
 
@@ -305,19 +305,40 @@ PDFs landen in `build/`. Logs in `build/<PRODUKT>_<LANG>.log` für die Diagnose.
 
 ## Downloads-Bereich
 
-Die Site hat eine zentrale Downloads-Seite (`/downloads/` bzw. `/en/downloads/`) mit Volltext-Suche über alle öffentlichen Asset-Dateien (heute: die generierten Manual-PDFs unter `docs/assets/downloads/`).
+Die Site hat eine zentrale Downloads-Seite (`/downloads/` bzw. `/en/downloads/`) mit Volltext-Suche über alle öffentlichen Asset-Dateien unter `docs/assets/downloads/`.
+
+**Filename-Konvention (Pflicht):**
+
+```
+<PRODUKT>_<TYP>_<LANG>.<ext>
+```
+
+- `<PRODUKT>` — UPPERCASE-Code wie im Verzeichnisnamen (z. B. `LAPTEQPLUSATMOSPHERE`).
+- `<TYP>` — UPPERCASE-Token, beschreibt die Asset-Sorte. Bisher gibt es `MANUAL`. Konventionen für künftige Typen: `DATASHEET`, `DRAWING`, `FIRMWARE`, `STEP` o. ä.
+- `<LANG>` — `DE` oder `EN`.
+- `<ext>` — beliebige Dateiendung (`pdf`, `zip`, `step`, `dxf`, …). Endung landet im Manifest-Feld `ext` und kann später als Filter/Badge genutzt werden.
+
+Beispiele:
+
+```
+LAPTEQPLUSATMOSPHERE_MANUAL_DE.pdf
+PANC_DATASHEET_EN.pdf
+LAPTEQPLUS_FIRMWARE_DE.zip
+```
+
+Dateien ohne Typ-Token (Altform `<PRODUKT>_<LANG>.<ext>`) oder mit unbekanntem Sprach-Token werden vom Hook **übersprungen** und mit `WARNING` ins Build-Log geschrieben — Konventionsbrüche werden so sichtbar.
 
 **Architektur:**
 
-- **`hooks/downloads_manifest.py`** — MkDocs-Hook (in `mkdocs.yml` unter `hooks:`), läuft beim Build. Scannt `docs/assets/downloads/*.pdf`, parst Filenames (`<PRODUKT>_<LANG>.pdf` oder forward-kompatibel `<PRODUKT>_<TYPE>_<LANG>.pdf`), liest den `title:` aus dem jeweiligen Produkt-`index.md` und schreibt ein generiertes `assets/downloads/manifest.json` ins Site-Output (kein Commit nötig — wird bei jedem Build neu erzeugt). DE-Frontmatter dient als Fallback, falls EN-Frontmatter den `title:` nicht setzt.
+- **`hooks/downloads_manifest.py`** — MkDocs-Hook (in `mkdocs.yml` unter `hooks:`), läuft beim Build. Scannt `docs/assets/downloads/`, parst Filenames nach obiger Konvention, liest den `title:` aus dem jeweiligen Produkt-`index.md` und schreibt ein generiertes `assets/downloads/manifest.json` ins Site-Output (kein Commit nötig — wird bei jedem Build neu erzeugt). DE-Frontmatter dient als Fallback, falls EN-Frontmatter den `title:` nicht setzt.
 - **`docs/downloads/index.md`** + **`docs/en/downloads/index.md`** — statische Seiten mit `<input id="download-search">` und `<div id="download-results">`. Kein hartkodierter Listen-Inhalt.
 - **`docs/javascripts/downloads.js`** — global via `extra_javascript` geladen, no-op auf Seiten ohne `#download-results`. Lädt das Manifest, liest `?q=` aus der URL, filtert Substring-case-insensitive über `product`, `productTitle`, `type`, `file`, rendert je Produkt eine Card, je Datei eine Zeile mit DE/EN-Tag und Download-Button. URL wird live mit `history.replaceState` aktualisiert (bookmarkbar/teilbar).
 
-**Verlinkung von Produktseiten:** In jeder `docs/<PRODUKT>/index.md` (DE + EN) ist eine Grid-Card „Download" vorhanden, die nach `../downloads/?q=<Begriff>` verlinkt. Der Suchbegriff ist so gewählt, dass er Substring des `productTitle` ist (z. B. `?q=Atmosphere` matcht „LAP-TEQ PLUS Atmosphere").
+**Verlinkung von Produktseiten:** In jeder `docs/<PRODUKT>/index.md` (DE + EN) ist eine Grid-Card „Download" vorhanden, die nach `../downloads/index.md?q=<Begriff>` verlinkt. Der Suchbegriff ist so gewählt, dass er Substring des `productTitle` ist (z. B. `?q=Atmosphere` matcht „LAP-TEQ PLUS Atmosphere"). Die `index.md`-Form im Pfad ist nötig, damit MkDocs `--strict` den Link nicht als „unrecognized" warnt — gerendert wird ohnehin auf `…/downloads/?q=…`.
 
-**Bei einem neuen Produkt:** Sobald der `pdf`-Workflow das `<PRODUKT>_<LANG>.pdf` nach `docs/assets/downloads/` committet, taucht der Eintrag automatisch in der Downloads-Liste auf — keine Anpassung an `downloads/index.md` oder am Hook nötig. Nur die Download-Grid-Card im jeweiligen Produkt-`index.md` ergänzen (gehört zur Checkliste unten).
+**Bei einem neuen Produkt:** Sobald der `pdf`-Workflow das `<PRODUKT>_MANUAL_<LANG>.pdf` nach `docs/assets/downloads/` committet, taucht der Eintrag automatisch in der Downloads-Liste auf — keine Anpassung an `downloads/index.md` oder am Hook nötig. Nur die Download-Grid-Card im jeweiligen Produkt-`index.md` ergänzen (gehört zur Checkliste unten).
 
-**Neue Asset-Typen (Zukunft):** Wenn z. B. Datenblätter dazukommen, einfach Filenames der Form `<PRODUKT>_DATASHEET_DE.pdf` produzieren (der Hook erkennt das automatisch und setzt `type: "Datasheet"`). Übersetzungen der Type-Labels für die UI liegen in `docs/javascripts/downloads.js` im `I18N`-Objekt.
+**Neue Asset-Typen (Zukunft):** Datei mit Namen `<PRODUKT>_<TYP>_<LANG>.<ext>` nach `docs/assets/downloads/` legen — entweder manuell committet oder von einem zusätzlichen CI-Workflow analog zu `pdf.yml` erzeugt. Der Hook erkennt das Token automatisch und zeigt es title-cased als Badge (z. B. `DATASHEET` → `Datasheet`). Lokalisierte Labels (z. B. „Datenblatt") können in `docs/javascripts/downloads.js` im `I18N`-Objekt unter `type:` ergänzt werden — ohne Eintrag fällt das Frontend auf das Roh-Token zurück.
 
 ## Skeleton: neues Produkt anlegen
 
@@ -347,7 +368,7 @@ Dann in beiden `index.md` das Frontmatter ausfüllen (`title:` ist Pflicht, `cov
 - [ ] `python3 pdf/validate_products.py` lokal grün — keine Errors
 - [ ] Lokal `mkdocs build --strict` ausführen — keine Errors / Warnings akzeptieren
 - [ ] Lokal `mkdocs serve` und im Browser stichprobenhaft prüfen (Sidebar, Cards, Verlinkungen, CE-Bilder)
-- [ ] Commit auf passenden Feature-Branch, Push, ggf. PR — der `pdf`-Workflow generiert beim grünen Lauf `<PRODUKT>_DE.pdf` und `<PRODUKT>_EN.pdf` in `docs/assets/downloads/`
+- [ ] Commit auf passenden Feature-Branch, Push, ggf. PR — der `pdf`-Workflow generiert beim grünen Lauf `<PRODUKT>_MANUAL_DE.pdf` und `<PRODUKT>_MANUAL_EN.pdf` in `docs/assets/downloads/`
 
 ## Existierende Produkte (Stand: dieses Repo)
 

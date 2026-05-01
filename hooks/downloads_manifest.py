@@ -1,17 +1,22 @@
 """MkDocs hook: build a JSON manifest of the public download assets.
 
-Scans `docs/assets/downloads/*.pdf` at build time and emits
+Scans `docs/assets/downloads/` at build time and emits
 `assets/downloads/manifest.json` into the rendered site. The downloads page
 (`docs/downloads/index.md` and its EN mirror) fetches this manifest and renders
 a filterable list — see `docs/javascripts/downloads.js`.
 
-Filename convention currently produced by the `pdf` workflow:
-    <PRODUCT>_<LANG>.pdf            # Manual (one per product per language)
+Required filename convention:
+    <PRODUCT>_<TYPE>_<LANG>.<ext>
 
-The hook is forward-compatible: any future asset following the pattern
-    <PRODUCT>_<TYPE>_<LANG>.pdf     # e.g. PANC_DATASHEET_DE.pdf
-is recognised and tagged with the corresponding `type`. Plain
-`<PRODUCT>_<LANG>.<ext>` files default to type "Manual" for PDFs.
+Both <TYPE> and <LANG> are mandatory. Examples:
+    LAPTEQPLUSATMOSPHERE_MANUAL_DE.pdf
+    PANC_DATASHEET_EN.pdf
+    LAPTEQPLUS_FIRMWARE_DE.zip
+    INTERFACE_DRAWING_DE.step
+
+Files that don't match are skipped and a WARNING is logged. The file
+extension is captured separately in the `ext` field — any extension is
+accepted (PDF, ZIP, STEP, DXF, …).
 
 The product display title (`productTitle`) is read from the YAML frontmatter
 of `docs/<PRODUCT>/index.md` (per language, with German as fallback) so the
@@ -32,10 +37,6 @@ MANIFEST_REL_PATH = "assets/downloads/manifest.json"
 
 LANG_CODES = {"DE": "de", "EN": "en"}
 LANG_DOC_DIRS = {"de": "", "en": "en"}
-
-DEFAULT_TYPES_BY_EXT = {
-    ".pdf": "Manual",
-}
 
 
 def _read_frontmatter_title(md_path: Path) -> str:
@@ -63,16 +64,21 @@ def _read_frontmatter_title(md_path: Path) -> str:
 
 
 def _parse_filename(stem: str) -> tuple[str, str, str] | None:
-    """Parse `<PRODUCT>[_<TYPE>]_<LANG>` → (product, type_or_empty, lang). None if unrecognised."""
+    """Parse `<PRODUCT>_<TYPE>_<LANG>` → (product, type, lang).
+
+    Returns None if the stem doesn't match — in particular if the type token
+    is missing (e.g. the legacy `<PRODUCT>_<LANG>` form). Both product and
+    type may contain further underscores; only the *last* component is the
+    language token, the *first* is the product, and everything in between is
+    treated as the type (joined with underscores).
+    """
     parts = stem.split("_")
-    if len(parts) < 2:
+    if len(parts) < 3:
         return None
     lang_token = parts[-1].upper()
     if lang_token not in LANG_CODES:
         return None
     lang = LANG_CODES[lang_token]
-    if len(parts) == 2:
-        return parts[0], "", lang
     return parts[0], "_".join(parts[1:-1]), lang
 
 
@@ -99,16 +105,16 @@ def _build_manifest(docs_dir: Path) -> list[dict]:
     for asset in sorted(downloads_dir.iterdir()):
         if not asset.is_file() or asset.name.startswith("."):
             continue
-        ext = asset.suffix.lower()
         parsed = _parse_filename(asset.stem)
         if parsed is None:
-            log.info("downloads_manifest: skipping unrecognised filename %s", asset.name)
+            log.warning(
+                "downloads_manifest: skipping %s — does not match <PRODUCT>_<TYPE>_<LANG>.<ext>",
+                asset.name,
+            )
             continue
         product, type_token, lang = parsed
-        if not type_token:
-            doc_type = DEFAULT_TYPES_BY_EXT.get(ext, ext.lstrip(".").upper() or "File")
-        else:
-            doc_type = type_token.replace("_", " ").title()
+        doc_type = type_token.replace("_", " ").title()
+        ext = asset.suffix.lower().lstrip(".")
         manifest.append(
             {
                 "file": f"{DOWNLOADS_SUBDIR}/{asset.name}",
@@ -116,7 +122,7 @@ def _build_manifest(docs_dir: Path) -> list[dict]:
                 "productTitle": _resolve_product_title(docs_dir, product, lang),
                 "lang": lang,
                 "type": doc_type,
-                "ext": ext.lstrip("."),
+                "ext": ext,
                 "size": asset.stat().st_size,
             }
         )
