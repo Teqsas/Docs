@@ -36,16 +36,15 @@
     return lang.indexOf("en") === 0 ? "en" : "de";
   }
 
-  function manifestUrl() {
-    // Page lives at /downloads/ (1 segment) or /en/downloads/ (2 segments).
-    // Walk up to site root, then descend into assets/.
-    var path = window.location.pathname.replace(/\/+$/, "/");
-    var segments = path.split("/").filter(Boolean);
-    var depth = segments.length;
-    var prefix = "";
-    for (var i = 0; i < depth; i++) prefix += "../";
-    if (!prefix) prefix = "./";
-    return prefix + "assets/downloads/manifest.json";
+  function manifestUrl(container) {
+    // The downloads page itself declares the page-relative path in
+    // `data-manifest`. That keeps the lookup correct regardless of any
+    // path prefix the site is deployed under (e.g. /preview/<branch>/).
+    var attr = container && container.getAttribute("data-manifest");
+    if (attr) return attr;
+    // Fallback: derive from <html lang> assuming the canonical layout
+    // /downloads/ for de and /en/downloads/ for en.
+    return (pageLang() === "en" ? "../../" : "../") + "assets/downloads/manifest.json";
   }
 
   function formatSize(bytes) {
@@ -168,8 +167,9 @@
     var lang = pageLang();
     var t = I18N[lang];
 
-    var manifestPath = manifestUrl();
-    // For asset href we need the same site-root-relative prefix as the manifest.
+    var manifestPath = manifestUrl(container);
+    // For asset href we need the same page-relative prefix as the manifest,
+    // since manifest entries reference files via the same `assets/downloads/...` key.
     var fileBase = manifestPath.replace(/assets\/downloads\/manifest\.json$/, "");
 
     var initialMsg = container.getAttribute("data-empty-message-initial");

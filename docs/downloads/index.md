@@ -17,5 +17,6 @@ Geben Sie einen Produktnamen ins Suchfeld ein (z. B. „Atmosphere") oder lassen
 <div
   id="download-results"
   class="download-results"
+  data-manifest="../assets/downloads/manifest.json"
   data-empty-message="Keine Treffer für Ihre Suche."
   data-empty-message-initial="Lade Downloads &hellip;"></div>
