@@ -1,21 +1,16 @@
 #!/usr/bin/env bash
-# Build all manual PDFs (5 products x 2 languages = 10 PDFs) into build/.
+# Build all manual PDFs (every product directory x every supported language)
+# into build/. Products are discovered automatically — adding a new product
+# is "create docs/<NAME>/Manual/manual_*.md and a docs/<NAME>/index.md with
+# a 'title:' frontmatter field" and nothing else.
 
 set -euo pipefail
 
 REPO_ROOT="${GITHUB_WORKSPACE:-$(cd "$(dirname "$0")/.." && pwd)}"
 mkdir -p "$REPO_ROOT/build"
 
-# Product key -> human-readable title for the cover
-declare -A TITLES=(
-  [PANC]="PAN-C"
-  [LAPTEQPLUS]="LAP-TEQ PLUS"
-  [LAPTEQPLUSATMOSPHERE]="LAP-TEQ PLUS Atmosphere"
-  [LAPTEQPLUSELEVATION]="LAP-TEQ PLUS Elevation"
-  [INTERFACE]="LAP-TEQ PLUS INTERFACE"
-)
-
-# Language code -> docs root and per-language metadata
+# Languages: docs/ for de, docs/en/ for en. Adding a new language is one
+# entry per map.
 declare -A LANG_DIRS=(
   [de]="docs"
   [en]="docs/en"
@@ -29,6 +24,24 @@ declare -A LANG_REGIONS=(
   [en]="GB"
 )
 
+# Discover product directories. A product is any docs/<X>/ that has a Manual/
+# subdirectory and is not the language mirror (en/).
+mapfile -t PRODUCTS < <(
+  find "$REPO_ROOT/docs" -mindepth 2 -maxdepth 2 -type d -name Manual \
+    | awk -F/ -v repo="$REPO_ROOT/docs/" '
+        {
+          rel = substr($0, length(repo) + 1)
+          n = split(rel, parts, "/")
+          if (parts[1] != "en") print parts[1]
+        }
+      ' | sort -u
+)
+
+read_field() {
+  local file="$1" key="$2" default="$3"
+  python3 "$REPO_ROOT/pdf/read_frontmatter.py" "$file" "$key" "$default"
+}
+
 failures=()
 built=()
 failed_logs_file="$REPO_ROOT/build/failed_logs.txt"
@@ -38,15 +51,33 @@ for lang in de en; do
   base="${LANG_DIRS[$lang]}"
   subtitle="${LANG_SUBTITLES[$lang]}"
   region="${LANG_REGIONS[$lang]}"
-  for product in "${!TITLES[@]}"; do
-    title="${TITLES[$product]}"
+
+  for product in "${PRODUCTS[@]}"; do
     manual_dir="$REPO_ROOT/$base/$product/Manual"
+    index_file="$REPO_ROOT/$base/$product/index.md"
+
     if [[ ! -d "$manual_dir" ]]; then
       echo "skip ${product}/${lang}: ${manual_dir} missing"
       continue
     fi
 
-    # Numbered chapters in natural order, then manual_ce.md as the appendix.
+    # Resolve display title:
+    # 1) frontmatter title in the language-specific index.md
+    # 2) frontmatter title in the German index.md (fallback for missing EN frontmatter)
+    # 3) directory name as last resort
+    title=$(read_field "$index_file" title "")
+    if [[ -z "$title" && "$lang" != "de" ]]; then
+      title=$(read_field "$REPO_ROOT/docs/$product/index.md" title "")
+    fi
+    [[ -z "$title" ]] && title="$product"
+
+    # Cover image (optional). Path is relative to docs/, e.g. assets/foo/bar.png.
+    # Typst image() with --root=$REPO_ROOT accepts /docs/... as repo-absolute.
+    cover_image=$(read_field "$index_file" cover_image "")
+    if [[ -z "$cover_image" && "$lang" != "de" ]]; then
+      cover_image=$(read_field "$REPO_ROOT/docs/$product/index.md" cover_image "")
+    fi
+
     mapfile -t numbered < <(find "$manual_dir" -maxdepth 1 -name 'manual_[0-9]*.md' | sort -V)
     files=("${numbered[@]}")
     [[ -f "$manual_dir/manual_ce.md" ]] && files+=("$manual_dir/manual_ce.md")
@@ -60,14 +91,17 @@ for lang in de en; do
     log_file="$REPO_ROOT/build/${product}_${lang^^}.log"
     cover_file="$REPO_ROOT/build/cover_${product}_${lang}.typ"
 
-    cat > "$cover_file" <<EOF
-#cover(
-  title: "${title}",
-  subtitle: "${subtitle}",
-  vendor: "TEQSAS PRODUCTS",
-  logo: "/docs/assets/logo.png",
-)
-EOF
+    {
+      printf '#cover(\n'
+      printf '  title: "%s",\n' "${title//\"/\\\"}"
+      printf '  subtitle: "%s",\n' "${subtitle//\"/\\\"}"
+      printf '  vendor: "TEQSAS PRODUCTS",\n'
+      printf '  logo: "/docs/assets/logo.png",\n'
+      if [[ -n "$cover_image" ]]; then
+        printf '  hero: "/docs/%s",\n' "$cover_image"
+      fi
+      printf ')\n'
+    } > "$cover_file"
 
     echo "=== Building ${product}/${lang} -> ${out_pdf}"
 
@@ -109,6 +143,7 @@ EOF
 done
 
 echo "=== Summary ==="
+echo "Discovered products: ${PRODUCTS[*]}"
 echo "Built: ${#built[@]}"
 for b in "${built[@]}"; do echo "  ok   $b"; done
 echo "Failed: ${#failures[@]}"

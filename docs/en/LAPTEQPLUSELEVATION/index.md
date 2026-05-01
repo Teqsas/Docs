@@ -1,3 +1,8 @@
+---
+title: LAP-TEQ PLUS Elevation
+cover_image: assets/elevation/elevation_cover.png
+---
+
 # TEQSAS LAP-TEQ PLUS Elevation
 
 ![TEQSAS LAP-TEQ PLUS Elevation](../../assets/elevation/elevation_cover.png "TEQSAS LAP-TEQ PLUS Elevation")

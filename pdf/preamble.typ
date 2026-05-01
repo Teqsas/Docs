@@ -41,17 +41,22 @@
   vendor: "TEQSAS PRODUCTS",
   subtitle: "Bedienungsanleitung",
   logo: none,
+  hero: none,
 ) = {
   set page(header: none, footer: none, numbering: none)
-  v(1.5fr)
+  v(1.2fr)
   if logo != none {
     align(center)[#image(logo, width: 55mm)]
-    v(1.2em)
+    v(1em)
   }
   align(center)[
     #text(size: 11pt, weight: "bold", tracking: 2pt, fill: rgb("#222"))[#vendor]
   ]
-  v(2.5fr)
+  v(1.8fr)
+  if hero != none {
+    align(center)[#image(hero, width: 95mm)]
+    v(1.2em)
+  }
   align(center)[
     #text(size: 30pt, weight: "bold")[#title]
   ]
@@ -59,7 +64,7 @@
   align(center)[
     #text(size: 13pt, fill: rgb("#555"))[#subtitle]
   ]
-  v(3fr)
+  v(2fr)
   pagebreak()
 }
 

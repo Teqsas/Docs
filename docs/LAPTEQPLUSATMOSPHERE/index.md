@@ -1,3 +1,8 @@
+---
+title: LAP-TEQ PLUS Atmosphere
+cover_image: assets/atmosphere/atmosphere_cover.png
+---
+
 # TEQSAS LAP-TEQ PLUS Atmosphere
 
 ![TEQSAS LAP-TEQ PLUS Atmosphere](../assets/atmosphere/atmosphere_cover.png "TEQSAS LAP-TEQ PLUS Atmosphere")

@@ -1,3 +1,7 @@
+---
+title: LAP-TEQ PLUS
+---
+
 # TEQSAS LAP-TEQ PLUS
 
 <!-- TODO: Produktbild LAP-TEQ PLUS hier einfügen, sobald hochgeladen -->
