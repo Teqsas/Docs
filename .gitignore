@@ -164,3 +164,10 @@ cython_debug/
 # PDFs published by the pdf GitHub Action — undo the generic 'downloads/' rule above.
 !docs/assets/downloads/
 !docs/assets/downloads/**
+
+# Downloads page (the /downloads/ route on the site, with the search UI).
+# Same un-ignore reason — the generic 'downloads/' rule above would hide them.
+!docs/downloads/
+!docs/downloads/**
+!docs/en/downloads/
+!docs/en/downloads/**

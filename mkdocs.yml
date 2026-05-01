@@ -9,6 +9,12 @@ exclude_docs: |
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/downloads.js
+
+hooks:
+  - hooks/downloads_manifest.py
+
 extra:
   alternate:
     - name: Deutsch
@@ -141,6 +147,7 @@ nav:
           - Technische Daten: INTERFACE/Manual/manual_11.md
           - CE-Konformitätserklärung: INTERFACE/Manual/manual_ce.md
       - API: INTERFACE/API/INTERFACE_API.md
+  - Downloads: downloads/index.md
   - Support: support/support.md
 
 markdown_extensions:
@@ -168,6 +175,7 @@ plugins:
           nav_translations:
             Startseite: Home
             Produkte: Products
+            Downloads: Downloads
             Bedienungsanleitung: Manual
             Einstieg: Getting started
             Betrieb: Operation

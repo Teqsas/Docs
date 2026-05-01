@@ -303,6 +303,22 @@ python3 pdf/validate_products.py && bash pdf/build.sh
 
 PDFs landen in `build/`. Logs in `build/<PRODUKT>_<LANG>.log` für die Diagnose.
 
+## Downloads-Bereich
+
+Die Site hat eine zentrale Downloads-Seite (`/downloads/` bzw. `/en/downloads/`) mit Volltext-Suche über alle öffentlichen Asset-Dateien (heute: die generierten Manual-PDFs unter `docs/assets/downloads/`).
+
+**Architektur:**
+
+- **`hooks/downloads_manifest.py`** — MkDocs-Hook (in `mkdocs.yml` unter `hooks:`), läuft beim Build. Scannt `docs/assets/downloads/*.pdf`, parst Filenames (`<PRODUKT>_<LANG>.pdf` oder forward-kompatibel `<PRODUKT>_<TYPE>_<LANG>.pdf`), liest den `title:` aus dem jeweiligen Produkt-`index.md` und schreibt ein generiertes `assets/downloads/manifest.json` ins Site-Output (kein Commit nötig — wird bei jedem Build neu erzeugt). DE-Frontmatter dient als Fallback, falls EN-Frontmatter den `title:` nicht setzt.
+- **`docs/downloads/index.md`** + **`docs/en/downloads/index.md`** — statische Seiten mit `<input id="download-search">` und `<div id="download-results">`. Kein hartkodierter Listen-Inhalt.
+- **`docs/javascripts/downloads.js`** — global via `extra_javascript` geladen, no-op auf Seiten ohne `#download-results`. Lädt das Manifest, liest `?q=` aus der URL, filtert Substring-case-insensitive über `product`, `productTitle`, `type`, `file`, rendert je Produkt eine Card, je Datei eine Zeile mit DE/EN-Tag und Download-Button. URL wird live mit `history.replaceState` aktualisiert (bookmarkbar/teilbar).
+
+**Verlinkung von Produktseiten:** In jeder `docs/<PRODUKT>/index.md` (DE + EN) ist eine Grid-Card „Download" vorhanden, die nach `../downloads/?q=<Begriff>` verlinkt. Der Suchbegriff ist so gewählt, dass er Substring des `productTitle` ist (z. B. `?q=Atmosphere` matcht „LAP-TEQ PLUS Atmosphere").
+
+**Bei einem neuen Produkt:** Sobald der `pdf`-Workflow das `<PRODUKT>_<LANG>.pdf` nach `docs/assets/downloads/` committet, taucht der Eintrag automatisch in der Downloads-Liste auf — keine Anpassung an `downloads/index.md` oder am Hook nötig. Nur die Download-Grid-Card im jeweiligen Produkt-`index.md` ergänzen (gehört zur Checkliste unten).
+
+**Neue Asset-Typen (Zukunft):** Wenn z. B. Datenblätter dazukommen, einfach Filenames der Form `<PRODUKT>_DATASHEET_DE.pdf` produzieren (der Hook erkennt das automatisch und setzt `type: "Datasheet"`). Übersetzungen der Type-Labels für die UI liegen in `docs/javascripts/downloads.js` im `I18N`-Objekt.
+
 ## Skeleton: neues Produkt anlegen
 
 `docs/_template/` ist eine vollständige Kopiervorlage. Vorgehen:
@@ -326,6 +342,7 @@ Dann in beiden `index.md` das Frontmatter ausfüllen (`title:` ist Pflicht, `cov
 - [ ] `mkdocs.yml` `nav_translations:` für ggf. neue Section-Beschriftungen ergänzen
 - [ ] `docs/index.md` Grid-Card-Eintrag hinzufügen
 - [ ] `docs/en/index.md` Grid-Card-Eintrag hinzufügen
+- [ ] In `docs/<PRODUKT>/index.md` und `docs/en/<PRODUKT>/index.md` jeweils eine Grid-Card „Download" mit Link `../downloads/?q=<Suchbegriff>` ergänzen (Suchbegriff = Substring des Produkt-`title:`, z. B. `Atmosphere`, `Elevation`)
 - [ ] Bilder unter `docs/assets/<produkt>/` ablegen, falls vorhanden
 - [ ] `python3 pdf/validate_products.py` lokal grün — keine Errors
 - [ ] Lokal `mkdocs build --strict` ausführen — keine Errors / Warnings akzeptieren
