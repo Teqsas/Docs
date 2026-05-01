@@ -24,4 +24,10 @@ This is the collection of documents for the TEQSAS PAN-C.
 
     [To the declaration](./Manual/manual_ce.md)
 
+-   :octicons-download-16: __Download__
+
+    ---
+
+    [To the downloads](../downloads/index.md?q=PAN-C)
+
 </div>

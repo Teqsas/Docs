@@ -87,8 +87,11 @@ for lang in de en; do
       continue
     fi
 
-    out_pdf="$REPO_ROOT/build/${product}_${lang^^}.pdf"
-    log_file="$REPO_ROOT/build/${product}_${lang^^}.log"
+    # Output filename follows the downloads convention <PRODUCT>_<TYPE>_<LANG>.<ext>
+    # (see hooks/downloads_manifest.py). The pdf workflow only produces the
+    # MANUAL type today; future asset workflows would use other tokens.
+    out_pdf="$REPO_ROOT/build/${product}_MANUAL_${lang^^}.pdf"
+    log_file="$REPO_ROOT/build/${product}_MANUAL_${lang^^}.log"
     cover_file="$REPO_ROOT/build/cover_${product}_${lang}.typ"
 
     {

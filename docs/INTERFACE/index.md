@@ -35,4 +35,10 @@ Dies ist die Sammlung der Dokumente für das TEQSAS LAP-TEQ PLUS INTERFACE.
 
     [Zu den Daten](./Manual/manual_11.md)
 
+-   :octicons-download-16: __Download__
+
+    ---
+
+    [Zu den Downloads](../downloads/index.md?q=INTERFACE)
+
 </div>
