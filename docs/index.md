@@ -28,7 +28,7 @@ Hier finden Sie die aktuelle Dokumentation und Informationen zu TEQSAS PRODUCTS
 
     [Zur Dokumentation](LAPTEQPLUSELEVATION/index.md)
 
--   :octicons-code-16: __LAP-TEQ PLUS INTERFACE__
+-   :octicons-package-16: __LAP-TEQ PLUS INTERFACE__
 
     ---
 
