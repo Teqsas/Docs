@@ -1,0 +1,92 @@
+[
+  {
+    "file": "assets/downloads/INTERFACE_MANUAL_DE.pdf",
+    "product": "INTERFACE",
+    "productTitle": "LAP-TEQ PLUS INTERFACE",
+    "lang": "de",
+    "type": "Manual",
+    "ext": "pdf",
+    "size": 1440707
+  },
+  {
+    "file": "assets/downloads/INTERFACE_MANUAL_EN.pdf",
+    "product": "INTERFACE",
+    "productTitle": "LAP-TEQ PLUS INTERFACE",
+    "lang": "en",
+    "type": "Manual",
+    "ext": "pdf",
+    "size": 1437936
+  },
+  {
+    "file": "assets/downloads/LAPTEQPLUSATMOSPHERE_MANUAL_DE.pdf",
+    "product": "LAPTEQPLUSATMOSPHERE",
+    "productTitle": "LAP-TEQ PLUS Atmosphere",
+    "lang": "de",
+    "type": "Manual",
+    "ext": "pdf",
+    "size": 1010269
+  },
+  {
+    "file": "assets/downloads/LAPTEQPLUSATMOSPHERE_MANUAL_EN.pdf",
+    "product": "LAPTEQPLUSATMOSPHERE",
+    "productTitle": "LAP-TEQ PLUS Atmosphere",
+    "lang": "en",
+    "type": "Manual",
+    "ext": "pdf",
+    "size": 1007236
+  },
+  {
+    "file": "assets/downloads/LAPTEQPLUSELEVATION_MANUAL_DE.pdf",
+    "product": "LAPTEQPLUSELEVATION",
+    "productTitle": "LAP-TEQ PLUS Elevation",
+    "lang": "de",
+    "type": "Manual",
+    "ext": "pdf",
+    "size": 2723929
+  },
+  {
+    "file": "assets/downloads/LAPTEQPLUSELEVATION_MANUAL_EN.pdf",
+    "product": "LAPTEQPLUSELEVATION",
+    "productTitle": "LAP-TEQ PLUS Elevation",
+    "lang": "en",
+    "type": "Manual",
+    "ext": "pdf",
+    "size": 2719866
+  },
+  {
+    "file": "assets/downloads/LAPTEQPLUS_MANUAL_DE.pdf",
+    "product": "LAPTEQPLUS",
+    "productTitle": "LAP-TEQ PLUS",
+    "lang": "de",
+    "type": "Manual",
+    "ext": "pdf",
+    "size": 293045
+  },
+  {
+    "file": "assets/downloads/LAPTEQPLUS_MANUAL_EN.pdf",
+    "product": "LAPTEQPLUS",
+    "productTitle": "LAP-TEQ PLUS",
+    "lang": "en",
+    "type": "Manual",
+    "ext": "pdf",
+    "size": 288573
+  },
+  {
+    "file": "assets/downloads/PANC_MANUAL_DE.pdf",
+    "product": "PANC",
+    "productTitle": "PAN-C",
+    "lang": "de",
+    "type": "Manual",
+    "ext": "pdf",
+    "size": 1513187
+  },
+  {
+    "file": "assets/downloads/PANC_MANUAL_EN.pdf",
+    "product": "PANC",
+    "productTitle": "PAN-C",
+    "lang": "en",
+    "type": "Manual",
+    "ext": "pdf",
+    "size": 1509612
+  }
+]
